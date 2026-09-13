@@ -55,18 +55,20 @@ navLinks.forEach((link) => {
   });
 });
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.14,
-});
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
 
-revealItems.forEach((item) => revealObserver.observe(item));
+  revealItems.forEach((item) => revealObserver.observe(item));
+} else {
+  revealItems.forEach((item) => item.classList.add('visible'));
+}
 
 if (form) {
   form.addEventListener('submit', (event) => {
@@ -80,9 +82,10 @@ if (form) {
     const formData = new FormData(form);
     const name = (formData.get('name') || '').toString().trim();
     const email = (formData.get('email') || '').toString().trim();
+    const message = (formData.get('message') || '').toString().trim();
 
-    if (!name || !email) {
-      formStatus.textContent = 'Please complete your name and work email.';
+    if (!name || !email || !message) {
+      formStatus.textContent = 'Please complete the required fields.';
       return;
     }
 
