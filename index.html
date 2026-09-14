@@ -3,25 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm connecting businesses, investors and opportunities across the GCC, South Asia, Africa and Australia.">
+
+  <meta
+    name="description"
+    content="Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm connecting businesses, investors and opportunities across the GCC, South Asia, Africa and Australia."
+  >
+
   <meta name="theme-color" content="#063B2D">
-  <meta property="og:title" content="Four Pillars Business Services | Connecting Markets. Creating Opportunities.">
-  <meta property="og:description" content="Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm connecting businesses, investors and opportunities across the GCC, South Asia, Africa and Australia.">
+
+  <meta
+    property="og:title"
+    content="Four Pillars Business Services | Connecting Markets. Creating Opportunities."
+  >
+
+  <meta
+    property="og:description"
+    content="Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm connecting businesses, investors and opportunities across the GCC, South Asia, Africa and Australia."
+  >
+
   <meta property="og:type" content="website">
   <meta property="og:image" content="meraki-four-pillars.jpeg">
+
   <link rel="canonical" href="https://fourpillars.ae/">
-  <link rel="icon" href="meraki-four-pillars.jpeg" type="image/jpeg">
+
+  <link
+    rel="icon"
+    href="meraki-four-pillars.jpeg"
+    type="image/jpeg"
+  >
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <title>Four Pillars Business Services | Connecting Markets. Creating Opportunities.</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #F8F5EC;
+      --panel: #F8F5EC;
+      --ink: #02271F;
+      --muted: #A9C89E;
+      --green: #063B2D;
+      --green-deep: #02271F;
+      --gold: #C9A35A;
+      --brown: #3D2A1F;
+      --white: #F8F5EC;
+      --border: rgba(61, 42, 31, 0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { overflow-x: clip; }
+    body { margin: 0; font-family: "Manrope", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+    .section { padding: 110px 0; }
+    .eyebrow { margin: 0 0 16px; color: var(--green); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+    .eyebrow.light { color: rgba(255,255,255,0.82); }
+    h1, h2, h3 { margin: 0; font-family: "Cormorant Garamond", serif; font-weight: 600; letter-spacing: -0.03em; line-height: 0.96; }
+    h1 { font-size: clamp(3.5rem, 6vw, 6.5rem); color: var(--white); }
+    h2 { font-size: clamp(2.7rem, 4vw, 4.3rem); color: var(--green-deep); }
+    .gold-text { color: #A77A32; }
+    .italic { font-style: italic; }
+    p { margin: 0; color: rgba(14,30,26,0.82); }
+
+    .site-header { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid rgba(255,255,255,0.08); background: #063B2D; backdrop-filter: blur(12px); transition: background 0.25s ease; }
+    .site-header.scrolled { background: #02271F; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 76px; }
+    .brand { position: relative; display: inline-flex; align-items: center; width: 220px; height: 86px; overflow: hidden; }
+    .official-logo { position: absolute; left: 50%; top: 50%; display: block; width: 340px; max-width: none; height: auto; object-fit: contain; transform: translate(-50%, -50%); }
+    .footer-logo { width: 300px; }
+    .desktop-nav { display: flex; align-items: center; gap: 28px; }
+    .desktop-nav a { color: #F8F5EC; font-size: 0.78rem; letter-spacing: 0.08em; font-weight: 700; text-transform: uppercase; transition: color 0.2s ease; }
+    .desktop-nav a:hover, .desktop-nav a:focus-visible { color: #C9A35A; }
+    .nav-cta, .button, .footer-email { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0.8rem 1.35rem; border-radius: 999px; background: #C9A35A; color: #02271F; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; transition: transform 0.2s ease, background 0.2s ease; }
+    .nav-cta { background: rgba(201,163,90,0.12); border: 1px solid rgba(201,163,90,0.45); color: var(--white); }
+    .nav-cta:hover, .button:hover, .footer-email:hover { transform: translateY(-1px); }
+    .menu-toggle { display: none; align-items: center; gap: 12px; background: transparent; border: 0; color: var(--white); font: inherit; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; }
+    .menu-toggle i { position: relative; width: 22px; height: 2px; display: block; background: var(--white); }
+    .menu-toggle i::before, .menu-toggle i::after { content: ""; position: absolute; left: 0; width: 22px; height: 2px; background: var(--white); }
+    .menu-toggle i::before { top: -7px; } .menu-toggle i::after { top: 7px; }
+    .mobile-menu { position: fixed; inset: 76px 0 auto 0; z-index: 35; background: #02271F; border-bottom: 1px solid rgba(255,255,255,0.08); padding: 26px 20px 30px; transform: translateY(-110%); opacity: 0; visibility: hidden; pointer-events: none; transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease; }
+    .mobile-menu.open { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
+    .mobile-menu-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; }
+    .menu-close { background: transparent; border: 0; color: var(--white); cursor: pointer; }
+    .menu-toggle:focus-visible, .menu-close:focus-visible, a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+    .mobile-menu nav { display: grid; gap: 12px; }
+    .mobile-menu a { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.12); color: var(--white); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .mobile-menu p { margin-top: 24px; color: rgba(255,255,255,0.72); }
+
+    .hero { position: relative; min-height: 85vh; display: flex; flex-direction: column; justify-content: flex-end; background: #02271F; overflow: hidden; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,39,31,0.84) 0%, rgba(6,59,45,0.60) 38%, rgba(6,59,45,0.22) 76%, rgba(6,59,45,0.10) 100%), linear-gradient(180deg, rgba(2,39,31,0.18) 0%, rgba(2,39,31,0.38) 100%); }
+    .hero-grid, .hero-footer { position: relative; z-index: 1; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; gap: 36px; min-height: calc(85vh - 76px); padding-top: 90px; }
+    .hero-copy { max-width: 760px; }
+    .hero-copy h1 { text-shadow: 0 20px 50px rgba(0,0,0,0.18); }
+    .hero-copy .gold-text { color: #C9A35A; font-style: italic; font-weight: 600; }
+    .hero-lede { margin-top: 26px; max-width: 660px; font-size: 1.08rem; color: rgba(248,245,236,0.88); }
+    .hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 34px; }
+    .text-link { color: var(--white); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+    .hero-visual { display: none; }
+    .hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 0 32px; border-top: 1px solid rgba(255,255,255,0.12); color: rgba(248,245,236,0.8); font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero-footer a { color: var(--white); font-weight: 800; }
+
+    .company-intro, .intro-panel, .services, .sectors, .markets, .pillars, .bridge, .contact { position: relative; }
+    .intro-grid, .intro-panel-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 42px; align-items: start; }
+    .intro-copy, .intro-panel-copy { display: grid; gap: 18px; }
+    .intro-copy { font-size: 1.05rem; } .intro-copy p { color: rgba(1,26,21,0.78); } .intro-panel { background: #f3ecdf; border-top: 1px solid rgba(6,59,45,0.08); border-bottom: 1px solid rgba(6,59,45,0.08); } .intro-panel-copy p { color: rgba(1,26,21,0.8); }
+    .services { background: linear-gradient(180deg, #f6f1e8 0%, #f2ead9 100%); }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 38px; }
+    .service-grid, .pillar-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+    .service-grid article, .pillar-grid article { background: transparent; border: 0; border-left: 1px solid rgba(61,42,31,0.26); border-radius: 0; padding: 10px 28px 26px; box-shadow: none; }
+    .service-grid article:nth-child(3n + 1), .pillar-grid article:first-child { border-left-color: #A77A32; }
+    .service-grid span, .pillar-grid span { display: inline-flex; margin-bottom: 18px; color: #A77A32; font-family: "Cormorant Garamond", serif; font-size: 2.4rem; font-weight: 700; line-height: 1; }
+    .service-grid h3, .pillar-grid h3 { margin-bottom: 12px; font-size: clamp(1.8rem, 2vw, 2.6rem); color: var(--green-deep); }
+    .service-grid p, .pillar-grid p { color: rgba(17,35,30,0.8); }
+    .collaboration { background: linear-gradient(135deg, #0a2a23 0%, #123c34 46%, #0a211d 100%); color: var(--white); }
+    .collab-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+    .collab-image img { display: block; width: 100%; height: 520px; object-fit: contain; border-radius: 0; background: transparent; box-shadow: none; }
+    .collab-copy { display: grid; gap: 18px; } .collab-copy h2 { color: var(--white); } .collab-subheading { font-size: 1.18rem; color: rgba(255,255,255,0.86); } .collab-copy p { color: rgba(255,255,255,0.8); }
+    .sector-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .sector-grid article { display: flex; align-items: flex-start; gap: 18px; padding: 26px 22px; min-height: 210px; border-radius: 20px; border: 1px solid rgba(6,59,45,0.08); }
+    .sector-grid article > div { flex: 1; } .sector-grid h3 { margin-bottom: 10px; font-size: clamp(1.8rem, 2vw, 2.3rem); }
+    .sector-grid span { display: block; width: 80px; color: #A77A32; font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 700; line-height: 1; }
+    .sector-green { background: #063B2D; } .sector-gold { background: #A9C89E; } .sector-brown { background: #E6D6B8; } .sector-deep { background: #3D2A1F; }
+    .sector-green h3, .sector-green p, .sector-green span, .sector-deep h3, .sector-deep p, .sector-deep span { color: #F8F5EC; } .sector-gold h3, .sector-gold p, .sector-gold span { color: #02271F; } .sector-brown h3, .sector-brown p, .sector-brown span { color: #3D2A1F; }
+
+    .markets, .bridge, footer { background: #02271F; } .markets { color: var(--white); }
+    .market-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 42px; align-items: center; } .market-grid h2, .market-grid p { color: var(--white); } .footprint-tags { margin-top: 20px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #D8B66A; }
+    .orbit { position: relative; width: min(420px, 100%); height: 420px; margin: 0 auto; } .orbit-ring, .orbit-line { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); } .orbit-ring { border: 1px solid rgba(201,163,90,0.42); border-radius: 50%; } .ring-one { width: 360px; height: 360px; } .ring-two { width: 240px; height: 240px; } .orbit-line { height: 1px; width: 300px; background: rgba(201,163,90,0.42); } .line-two { transform: translate(-50%, -50%) rotate(90deg); } .line-three { transform: translate(-50%, -50%) rotate(45deg); } .line-four { transform: translate(-50%, -50%) rotate(-45deg); }
+    .dubai, .market { position: absolute; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 700; text-align: center; } .dubai { left: 50%; top: 50%; width: 110px; height: 110px; transform: translate(-50%, -50%); background: linear-gradient(135deg, #D8B66A 0%, #F2DCA4 100%); color: var(--green-deep); box-shadow: 0 18px 50px rgba(201,163,90,0.28); } .market { min-width: 100px; padding: 8px 12px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.9); }
+    .gcc { left: 10%; top: 16%; } .south { right: 8%; top: 22%; } .africa { left: 10%; bottom: 12%; } .aus { right: 14%; bottom: 16%; }
+    .pillars { background: #f4efe6; } .pillar-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } .pillar-grid article { min-height: 260px; border-left-color: rgba(167,122,50,0.7); }
+    .bridge { background: linear-gradient(135deg, #081f1a 0%, #123d34 100%); } .bridge-inner { display: grid; gap: 18px; text-align: center; justify-items: center; } .bridge-inner h2 { color: var(--white); } .bridge-inner p { max-width: 860px; color: rgba(255,255,255,0.8); }
+
+    .contact { background: #F8F5EC; } .contact-grid { display: grid; grid-template-columns: 0.44fr 0.56fr; gap: 46px; align-items: center; } .contact-intro { display: grid; gap: 22px; } .contact-intro h2 { font-size: clamp(3rem, 5vw, 5rem); color: var(--green-deep); } .contact-supporting { max-width: 500px; color: rgba(1,26,21,0.78); }
+    .brand-lockup { display: inline-flex; width: min(260px, 100%); } .brand-lockup-frame { width: 100%; padding: 12px 10px; border: 1px solid rgba(167,122,50,0.45); background: rgba(255,255,255,0.2); } .brand-lockup-frame img { width: 100%; height: auto; object-fit: contain; display: block; }
+    .contact-meta { display: grid; gap: 18px; } .meta-row { display: grid; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(1,26,21,0.1); } .meta-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #3D2A1F; } .meta-value, .contact-link { color: var(--green-deep); font-weight: 700; } .trust-line { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(1,26,21,0.12); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(61,42,31,0.8); }
+    .contact-panel-inner { width: min(100%, 640px); padding: 32px 28px 24px; background: #F8F5EC; border: 1px solid rgba(167,122,50,0.7); border-radius: 24px; box-shadow: 0 20px 42px rgba(6,59,45,0.08); } .eyebrow-panel { margin-bottom: 8px; color: #3D2A1F; }
+    form { display: grid; gap: 18px; } .field-group { display: grid; gap: 8px; } label { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-deep); } input, textarea { width: 100%; padding: 0.95rem 1rem; border: 1px solid rgba(1,26,21,0.12); border-radius: 14px; background: rgba(255,255,255,0.7); color: var(--ink); transition: border-color 0.2s ease, box-shadow 0.2s ease; } textarea { min-height: 150px; resize: vertical; } input:focus, textarea:focus { border-color: rgba(167,122,50,0.9); box-shadow: 0 0 0 3px rgba(167,122,50,0.12); outline: none; } .premium-button { width: 100%; border: none; justify-content: center; border-radius: 14px; background: #B8873D; color: #fffaf0; box-shadow: 0 10px 22px rgba(184,135,61,0.18); } .form-status { min-height: 20px; margin: 0; font-size: 0.96rem; color: var(--green-deep); font-weight: 700; }
+    footer { color: rgba(248,245,236,0.8); } .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 38px 0; } .footer-main p { flex: 1; color: rgba(248,245,236,0.76); font-size: 1.05rem; line-height: 1.4; } .footer-email { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.12); color: var(--white); } .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 0 30px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(248,245,236,0.72); font-size: 0.78rem; }
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; } .reveal.visible { opacity: 1; transform: translateY(0); } .reveal-delay { transition-delay: 0.15s; }
+
+    @media (max-width: 980px) {
+      .desktop-nav { display: none; } .menu-toggle { display: inline-flex; }
+      .hero-grid, .intro-grid, .intro-panel-grid, .collab-grid, .market-grid, .contact-grid, .service-grid, .pillar-grid, .sector-grid { grid-template-columns: 1fr; }
+      .service-grid, .pillar-grid, .sector-grid { gap: 18px; } .service-grid article, .pillar-grid article { border-left: 0; border-top: 1px solid rgba(61,42,31,0.2); padding: 24px 0; } .service-grid article:first-child, .pillar-grid article:first-child { border-top: 0; } .footer-main, .footer-bottom, .hero-footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 82px 0; } .header-inner { min-height: 72px; } .brand { width: 178px; height: 70px; } .official-logo { width: 282px; } .footer-logo { width: 270px; } .mobile-menu { inset: 72px 0 auto 0; } .hero { min-height: 88vh; } .hero-grid { min-height: calc(88vh - 72px); padding-top: 72px; } .hero-actions { flex-direction: column; align-items: flex-start; } .hero-footer { letter-spacing: 0.08em; } .service-grid article, .pillar-grid article, .sector-grid article { min-width: 0; padding: 22px 18px; } .pillar-grid { grid-template-columns: 1fr; } .sector-grid article > span { width: auto; min-width: 0; flex: 0 1 80px; overflow-wrap: anywhere; } .market-grid .orbit { width: 100%; min-width: 0; } .orbit { height: 360px; } .ring-one { width: 280px; height: 280px; } .ring-two { width: 190px; height: 190px; } .line-one, .line-two, .line-three, .line-four { width: 240px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .reveal { opacity: 1; transform: none; } }
+  </style>
+
+  <title>
+    Four Pillars Business Services | Connecting Markets. Creating Opportunities.
+  </title>
 </head>
+
 <body>
+
+  <!-- =========================================================
+       HEADER
+  ========================================================== -->
+
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Four Pillars Business Services home">
-        <img class="official-logo" src="meraki-four-pillars.jpeg" alt="Meraki × Four Pillars">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Four Pillars Business Services home"
+      >
+        <img
+          class="official-logo"
+          src="meraki-four-pillars.jpeg"
+          alt="Meraki × Four Pillars"
+        >
       </a>
 
       <nav class="desktop-nav" aria-label="Primary navigation">
@@ -30,34 +195,99 @@
         <a href="#services">SERVICES</a>
         <a href="#sectors">SECTORS</a>
         <a href="#markets">MARKETS</a>
-        <a href="#contact" class="nav-cta">LET'S CONNECT <span>↗</span></a>
+
+        <a href="#contact" class="nav-cta">
+          LET'S CONNECT <span>↗</span>
+        </a>
       </nav>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
         <span>Menu</span>
         <i></i>
       </button>
+
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+
+  <!-- =========================================================
+       MOBILE MENU
+  ========================================================== -->
+
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-hidden="true"
+  >
+
     <div class="mobile-menu-top">
       <span>Navigation</span>
-      <button class="menu-close" type="button" aria-label="Close menu">Close <b>×</b></button>
+
+      <button
+        class="menu-close"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        Close <b>×</b>
+      </button>
     </div>
+
     <nav aria-label="Mobile navigation">
-      <a href="#approach">THE BUSINESS <span>↗</span></a>
-      <a href="#approach">APPROACH <span>↗</span></a>
-      <a href="#services">SERVICES <span>↗</span></a>
-      <a href="#sectors">SECTORS <span>↗</span></a>
-      <a href="#markets">MARKETS <span>↗</span></a>
-      <a href="#contact" class="mobile-cta">LET'S CONNECT <span>↗</span></a>
+      <a href="#approach">
+        THE BUSINESS <span>↗</span>
+      </a>
+
+      <a href="#approach">
+        APPROACH <span>↗</span>
+      </a>
+
+      <a href="#services">
+        SERVICES <span>↗</span>
+      </a>
+
+      <a href="#sectors">
+        SECTORS <span>↗</span>
+      </a>
+
+      <a href="#markets">
+        MARKETS <span>↗</span>
+      </a>
+
+      <a href="#contact" class="mobile-cta">
+        LET'S CONNECT <span>↗</span>
+      </a>
     </nav>
-    <p>Dubai · GCC · South Asia · Africa · Australia</p>
+
+    <p>
+      Dubai · GCC · South Asia · Africa · Australia
+    </p>
+
   </div>
 
+
+  <!-- =========================================================
+       MAIN
+  ========================================================== -->
+
   <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
+
+
+    <!-- =======================================================
+         HERO
+    ======================================================== -->
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
+      <!-- Cloudinary-hosted hero video -->
       <video
         class="hero-video"
         autoplay
@@ -66,332 +296,1092 @@
         playsinline
         preload="metadata"
         poster="meraki-four-pillars.jpeg"
+        aria-hidden="true"
       >
-        <source src="compressed-Meraki_Walkthrough.mp4" type="video/mp4">
+        <source
+          src="https://res.cloudinary.com/lmgemsl4/video/upload/v1789364045/compressed-Meraki_Walkthrough.mp4"
+          type="video/mp4"
+        >
       </video>
 
       <div class="hero-overlay"></div>
 
+
       <div class="container hero-grid">
+
         <div class="hero-copy reveal">
-          <p class="eyebrow light">DUBAI · GLOBAL REACH</p>
+
+          <p class="eyebrow light">
+            DUBAI · GLOBAL REACH
+          </p>
+
           <h1 id="hero-title">
             Connecting Markets.<br>
-            <span class="gold-text">Creating Opportunities.</span><br>
+            <span class="gold-text">
+              Creating Opportunities.
+            </span><br>
             Scaling Businesses.
           </h1>
 
           <p class="hero-lede">
-            Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm helping companies, investors, institutions and entrepreneurs identify opportunities, enter new markets and build sustainable international growth.
+            Four Pillars Business Services is a Dubai-based
+            cross-border consulting and business development firm
+            helping companies, investors, institutions and
+            entrepreneurs identify opportunities, enter new markets
+            and build sustainable international growth.
           </p>
 
           <div class="hero-actions">
-            <a class="button" href="#services">EXPLORE WHAT IS POSSIBLE <span>↗</span></a>
-            <a class="text-link light-link" href="#approach">OUR APPROACH <span>↓</span></a>
+
+            <a
+              class="button"
+              href="#services"
+            >
+              EXPLORE WHAT IS POSSIBLE
+              <span>↗</span>
+            </a>
+
+            <a
+              class="text-link light-link"
+              href="#approach"
+            >
+              OUR APPROACH
+              <span>↓</span>
+            </a>
+
           </div>
+
         </div>
 
+
+        <!-- Hero visual intentionally retained -->
         <div class="hero-visual reveal reveal-delay">
+
           <div class="hero-logo-card">
-            <img src="meraki-four-pillars.jpeg" alt="Meraki × Four Pillars official brand logo">
+
+            <img
+              src="meraki-four-pillars.jpeg"
+              alt="Meraki × Four Pillars official brand logo"
+            >
+
           </div>
+
         </div>
+
       </div>
+
 
       <div class="container hero-footer">
-        <span>GCC · SOUTH ASIA · AFRICA · AUSTRALIA</span>
-        <a href="#approach">SCROLL TO EXPLORE <span>↓</span></a>
+
+        <span>
+          GCC · SOUTH ASIA · AFRICA · AUSTRALIA
+        </span>
+
+        <a href="#approach">
+          SCROLL TO EXPLORE <span>↓</span>
+        </a>
+
       </div>
+
     </section>
 
-    <section id="approach" class="section company-intro">
+
+    <!-- =======================================================
+         APPROACH
+    ======================================================== -->
+
+    <section
+      id="approach"
+      class="section company-intro"
+    >
+
       <div class="container intro-grid">
+
         <div class="reveal">
-          <p class="eyebrow">OUR APPROACH</p>
-          <h2>More than a product.<br><span class="gold-text italic">A global perspective.</span></h2>
+
+          <p class="eyebrow">
+            OUR APPROACH
+          </p>
+
+          <h2>
+            More than a product.<br>
+            <span class="gold-text italic">
+              A global perspective.
+            </span>
+          </h2>
+
         </div>
+
 
         <div class="intro-copy reveal reveal-delay">
-          <p>“Expanding internationally requires more than a good product or service. It requires the right strategy, the right market and, most importantly, the right network.</p>
-          <p>At Four Pillars, we work closely with our clients to understand their ambitions, assess opportunities and develop practical strategies designed around their specific goals.</p>
-          <p>From market entry and business structuring to partnerships, distribution, investment opportunities and strategic introductions, we help businesses move from opportunity to execution.”</p>
+
+          <p>
+            “Expanding internationally requires more than a good
+            product or service. It requires the right strategy,
+            the right market and, most importantly, the right network.
+          </p>
+
+          <p>
+            At Four Pillars, we work closely with our clients to
+            understand their ambitions, assess opportunities and
+            develop practical strategies designed around their
+            specific goals.
+          </p>
+
+          <p>
+            From market entry and business structuring to partnerships,
+            distribution, investment opportunities and strategic
+            introductions, we help businesses move from opportunity
+            to execution.”
+          </p>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =======================================================
+         COMPANY INTRODUCTION
+    ======================================================== -->
 
     <section class="section intro-panel">
+
       <div class="container intro-panel-grid">
+
         <div class="intro-title reveal">
-          <p class="eyebrow">FOUR PILLARS BUSINESS SERVICES</p>
-          <h2>Connecting Markets. Creating Opportunities. Scaling Businesses.</h2>
+
+          <p class="eyebrow">
+            FOUR PILLARS BUSINESS SERVICES
+          </p>
+
+          <h2>
+            Connecting Markets.
+            Creating Opportunities.
+            Scaling Businesses.
+          </h2>
+
         </div>
+
 
         <div class="intro-panel-copy reveal reveal-delay">
-          <p>“Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm helping companies, investors, institutions and entrepreneurs identify opportunities, enter new markets and build sustainable international growth.</p>
-          <p>We operate at the intersection of strategy, market access, trusted relationships and execution, connecting businesses with the right people, partners, investors and opportunities across South Asia, Africa, the GCC and Australia.</p>
-          <p>Our focus extends across key growth sectors including Education, Real Estate, Hospitality and Food &amp; Consumer Products, where we help businesses unlock new markets, develop strategic partnerships and expand their international footprint.”</p>
+
+          <p>
+            “Four Pillars Business Services is a Dubai-based
+            cross-border consulting and business development firm
+            helping companies, investors, institutions and
+            entrepreneurs identify opportunities, enter new markets
+            and build sustainable international growth.
+          </p>
+
+          <p>
+            We operate at the intersection of strategy, market access,
+            trusted relationships and execution, connecting businesses
+            with the right people, partners, investors and opportunities
+            across South Asia, Africa, the GCC and Australia.
+          </p>
+
+          <p>
+            Our focus extends across key growth sectors including
+            Education, Real Estate, Hospitality and Food &amp;
+            Consumer Products, where we help businesses unlock new
+            markets, develop strategic partnerships and expand their
+            international footprint.”
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="services" class="services section">
+
+    <!-- =======================================================
+         SERVICES
+    ======================================================== -->
+
+    <section
+      id="services"
+      class="services section"
+    >
+
       <div class="container">
+
         <div class="section-heading reveal">
+
           <div>
-            <p class="eyebrow">WHAT WE DO</p>
-            <h2>From insight<br><span class="gold-text italic">to impact.</span></h2>
+
+            <p class="eyebrow">
+              WHAT WE DO
+            </p>
+
+            <h2>
+              From insight<br>
+              <span class="gold-text italic">
+                to impact.
+              </span>
+            </h2>
+
           </div>
+
         </div>
 
+
         <div class="service-grid">
+
           <article class="reveal">
             <span>01</span>
-            <h3>STRATEGIC CONSULTING</h3>
-            <p>“We provide commercially focused advice to help businesses identify growth opportunities, refine their strategy and develop a clear pathway for expansion.”</p>
+
+            <h3>
+              STRATEGIC CONSULTING
+            </h3>
+
+            <p>
+              “We provide commercially focused advice to help
+              businesses identify growth opportunities, refine
+              their strategy and develop a clear pathway for expansion.”
+            </p>
           </article>
+
 
           <article class="reveal reveal-delay">
             <span>02</span>
-            <h3>CROSS-BORDER MARKET ENTRY</h3>
-            <p>“We help businesses assess and enter new markets across the GCC, South Asia, Africa and Australia, providing local market insight, connections and strategic direction.”</p>
+
+            <h3>
+              CROSS-BORDER MARKET ENTRY
+            </h3>
+
+            <p>
+              “We help businesses assess and enter new markets
+              across the GCC, South Asia, Africa and Australia,
+              providing local market insight, connections and
+              strategic direction.”
+            </p>
           </article>
+
 
           <article class="reveal">
             <span>03</span>
-            <h3>STRATEGIC PARTNERSHIPS</h3>
-            <p>“We connect businesses with carefully selected partners, operators, developers, institutions, investors and decision-makers to create mutually beneficial opportunities.”</p>
+
+            <h3>
+              STRATEGIC PARTNERSHIPS
+            </h3>
+
+            <p>
+              “We connect businesses with carefully selected
+              partners, operators, developers, institutions,
+              investors and decision-makers to create mutually
+              beneficial opportunities.”
+            </p>
           </article>
+
 
           <article class="reveal reveal-delay">
             <span>04</span>
-            <h3>BUSINESS EXPANSION &amp; SCALING</h3>
-            <p>“Whether entering a new country, launching a new division or scaling an existing business, we help develop the relationships, structure and strategy required for sustainable growth.”</p>
+
+            <h3>
+              BUSINESS EXPANSION &amp; SCALING
+            </h3>
+
+            <p>
+              “Whether entering a new country, launching a new
+              division or scaling an existing business, we help
+              develop the relationships, structure and strategy
+              required for sustainable growth.”
+            </p>
           </article>
+
 
           <article class="reveal">
             <span>05</span>
-            <h3>OPPORTUNITY &amp; INVESTMENT ADVISORY</h3>
-            <p>“We identify and facilitate commercially viable opportunities across our sectors and markets, connecting the right capital, businesses and projects.”</p>
+
+            <h3>
+              OPPORTUNITY &amp; INVESTMENT ADVISORY
+            </h3>
+
+            <p>
+              “We identify and facilitate commercially viable
+              opportunities across our sectors and markets,
+              connecting the right capital, businesses and projects.”
+            </p>
           </article>
+
 
           <article class="reveal reveal-delay">
             <span>06</span>
-            <h3>NETWORK &amp; MARKET ACCESS</h3>
-            <p>“Our strength lies in our network. We open doors to relationships and opportunities that can help businesses establish credibility, accelerate market entry and build a meaningful international presence.”</p>
+
+            <h3>
+              NETWORK &amp; MARKET ACCESS
+            </h3>
+
+            <p>
+              “Our strength lies in our network. We open doors
+              to relationships and opportunities that can help
+              businesses establish credibility, accelerate market
+              entry and build a meaningful international presence.”
+            </p>
           </article>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =======================================================
+         MERAKI COLLABORATION
+    ======================================================== -->
 
     <section class="collaboration section">
+
       <div class="container collab-grid">
+
         <div class="collab-image reveal">
-          <img src="meraki-four-pillars.jpeg" alt="Meraki × Four Pillars collaboration logo" loading="lazy">
+
+          <img
+            src="meraki-four-pillars.jpeg"
+            alt="Meraki × Four Pillars collaboration logo"
+            loading="lazy"
+          >
+
         </div>
+
 
         <div class="collab-copy reveal reveal-delay">
-          <p class="eyebrow light">STRATEGIC COLLABORATION</p>
-          <h2>Meraki × Four Pillars</h2>
-          <p class="collab-subheading">Building bridges between property, opportunity and international markets.</p>
-          <p>We connect strategic thinking with access to relevant markets, operators and commercial opportunities. Our work is structured around practical business growth, cross-border visibility and long-term execution.</p>
+
+          <p class="eyebrow light">
+            STRATEGIC COLLABORATION
+          </p>
+
+          <h2>
+            Meraki × Four Pillars
+          </h2>
+
+          <p class="collab-subheading">
+            Building bridges between property,
+            opportunity and international markets.
+          </p>
+
+          <p>
+            We connect strategic thinking with access to relevant
+            markets, operators and commercial opportunities.
+            Our work is structured around practical business growth,
+            cross-border visibility and long-term execution.
+          </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="sectors" class="sectors section">
+
+    <!-- =======================================================
+         SECTORS
+    ======================================================== -->
+
+    <section
+      id="sectors"
+      class="sectors section"
+    >
+
       <div class="container">
-        <p class="eyebrow">OUR SECTORS</p>
+
+        <p class="eyebrow">
+          OUR SECTORS
+        </p>
+
         <div class="section-heading reveal">
-          <h2>Key sectors.<br><span class="gold-text italic">Global opportunities.</span></h2>
+
+          <h2>
+            Key sectors.<br>
+            <span class="gold-text italic">
+              Global opportunities.
+            </span>
+          </h2>
+
         </div>
+
 
         <div class="sector-grid">
+
           <article class="sector-green reveal">
+
             <span>EDUCATION</span>
+
             <div>
-              <h3>EDUCATION</h3>
-              <p>Connecting education providers, institutions, investors and strategic partners across international markets.</p>
+
+              <h3>
+                EDUCATION
+              </h3>
+
+              <p>
+                Connecting education providers, institutions,
+                investors and strategic partners across
+                international markets.
+              </p>
+
             </div>
+
           </article>
+
 
           <article class="sector-gold reveal reveal-delay">
+
             <span>REAL ESTATE</span>
+
             <div>
-              <h3>REAL ESTATE</h3>
-              <p>Supporting developers, investors, agencies and businesses with market expansion, strategic partnerships and cross-border opportunities.</p>
+
+              <h3>
+                REAL ESTATE
+              </h3>
+
+              <p>
+                Supporting developers, investors, agencies and
+                businesses with market expansion, strategic
+                partnerships and cross-border opportunities.
+              </p>
+
             </div>
+
           </article>
+
 
           <article class="sector-brown reveal">
+
             <span>HOSPITALITY</span>
+
             <div>
-              <h3>HOSPITALITY</h3>
-              <p>Helping hospitality brands and operators identify new markets, strategic partners and opportunities for international growth.</p>
+
+              <h3>
+                HOSPITALITY
+              </h3>
+
+              <p>
+                Helping hospitality brands and operators identify
+                new markets, strategic partners and opportunities
+                for international growth.
+              </p>
+
             </div>
+
           </article>
+
 
           <article class="sector-deep reveal reveal-delay">
+
             <span>FOOD &amp; CONSUMER</span>
+
             <div>
-              <h3>FOOD &amp; CONSUMER PRODUCTS</h3>
-              <p>Supporting brands seeking distribution, market entry, strategic partnerships and expansion across high-growth international markets.</p>
+
+              <h3>
+                FOOD &amp; CONSUMER PRODUCTS
+              </h3>
+
+              <p>
+                Supporting brands seeking distribution, market
+                entry, strategic partnerships and expansion across
+                high-growth international markets.
+              </p>
+
             </div>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
 
-    <section id="markets" class="markets section">
+
+    <!-- =======================================================
+         MARKETS
+    ======================================================== -->
+
+    <section
+      id="markets"
+      class="markets section"
+    >
+
       <div class="container market-grid">
+
         <div class="reveal">
-          <p class="eyebrow light">OUR GLOBAL FOOTPRINT</p>
-          <h2>One base.<br><span class="gold-text italic">Four horizons.</span></h2>
-          <p>“From our base in Dubai, we work across strategically important markets including:”</p>
-          <p class="footprint-tags">GCC | SOUTH ASIA | AFRICA | AUSTRALIA</p>
-          <p>“Our role is to bridge markets and bring together the right combination of strategy, relationships, capital and opportunity.”</p>
+
+          <p class="eyebrow light">
+            OUR GLOBAL FOOTPRINT
+          </p>
+
+          <h2>
+            One base.<br>
+            <span class="gold-text italic">
+              Four horizons.
+            </span>
+          </h2>
+
+          <p>
+            “From our base in Dubai, we work across strategically
+            important markets including:”
+          </p>
+
+          <p class="footprint-tags">
+            GCC | SOUTH ASIA | AFRICA | AUSTRALIA
+          </p>
+
+          <p>
+            “Our role is to bridge markets and bring together the
+            right combination of strategy, relationships, capital
+            and opportunity.”
+          </p>
+
         </div>
 
-        <div class="orbit reveal reveal-delay" aria-label="Global markets map with GCC, South Asia, Africa and Australia">
+
+        <div
+          class="orbit reveal reveal-delay"
+          aria-label="Global markets map with GCC, South Asia, Africa and Australia"
+        >
+
           <div class="orbit-ring ring-one"></div>
           <div class="orbit-ring ring-two"></div>
+
           <div class="orbit-line line-one"></div>
           <div class="orbit-line line-two"></div>
           <div class="orbit-line line-three"></div>
           <div class="orbit-line line-four"></div>
-          <strong class="dubai">Dubai</strong>
-          <span class="market gcc">GCC</span>
-          <span class="market south">South Asia</span>
-          <span class="market africa">Africa</span>
-          <span class="market aus">Australia</span>
+
+          <strong class="dubai">
+            Dubai
+          </strong>
+
+          <span class="market gcc">
+            GCC
+          </span>
+
+          <span class="market south">
+            South Asia
+          </span>
+
+          <span class="market africa">
+            Africa
+          </span>
+
+          <span class="market aus">
+            Australia
+          </span>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =======================================================
+         FOUR PILLARS
+    ======================================================== -->
 
     <section class="pillars section">
+
       <div class="container">
-        <p class="eyebrow">WHY FOUR PILLARS</p>
+
+        <p class="eyebrow">
+          WHY FOUR PILLARS
+        </p>
+
         <div class="section-heading reveal">
-          <h2>Four pillars.<br><span class="gold-text italic">Lasting momentum.</span></h2>
+
+          <h2>
+            Four pillars.<br>
+            <span class="gold-text italic">
+              Lasting momentum.
+            </span>
+          </h2>
+
         </div>
+
 
         <div class="pillar-grid">
+
           <article class="reveal">
+
             <span>01</span>
-            <h3>STRATEGY</h3>
-            <p>Understanding where you want to go and creating the right roadmap.</p>
+
+            <h3>
+              STRATEGY
+            </h3>
+
+            <p>
+              Understanding where you want to go and creating
+              the right roadmap.
+            </p>
+
           </article>
 
+
           <article class="reveal reveal-delay">
+
             <span>02</span>
-            <h3>MARKET ACCESS</h3>
-            <p>Identifying the right markets and pathways to enter them.</p>
+
+            <h3>
+              MARKET ACCESS
+            </h3>
+
+            <p>
+              Identifying the right markets and pathways
+              to enter them.
+            </p>
+
           </article>
+
 
           <article class="reveal">
+
             <span>03</span>
-            <h3>NETWORK</h3>
-            <p>Connecting you with the right people, partners and decision-makers.</p>
+
+            <h3>
+              NETWORK
+            </h3>
+
+            <p>
+              Connecting you with the right people, partners
+              and decision-makers.
+            </p>
+
           </article>
 
+
           <article class="reveal reveal-delay">
+
             <span>04</span>
-            <h3>EXECUTION</h3>
-            <p>Turning strategy and opportunities into tangible commercial outcomes.</p>
+
+            <h3>
+              EXECUTION
+            </h3>
+
+            <p>
+              Turning strategy and opportunities into tangible
+              commercial outcomes.
+            </p>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =======================================================
+         BRIDGE / CTA
+    ======================================================== -->
 
     <section class="bridge section">
+
       <div class="container bridge-inner reveal">
-        <p class="eyebrow light">BUILDING BRIDGES ACROSS BORDERS</p>
-        <h2>Your ambition may be global.<br><span class="gold-text italic">Our role is to help you get there.</span></h2>
-        <p>“At Four Pillars Business Services, we don't simply advise businesses on where opportunities exist—we help create the connections that can make those opportunities possible.</p>
-        <p>Whether you are looking to expand into the GCC, access South Asian markets, explore Africa, enter Australia or build an international partnership, we bring together the strategic thinking and relationships required to take the next step.”</p>
-        <a class="button" href="#contact">START A CONVERSATION <span>↗</span></a>
+
+        <p class="eyebrow light">
+          BUILDING BRIDGES ACROSS BORDERS
+        </p>
+
+        <h2>
+          Your ambition may be global.<br>
+          <span class="gold-text italic">
+            Our role is to help you get there.
+          </span>
+        </h2>
+
+        <p>
+          “At Four Pillars Business Services, we don't simply
+          advise businesses on where opportunities exist—we help
+          create the connections that can make those opportunities
+          possible.
+        </p>
+
+        <p>
+          Whether you are looking to expand into the GCC, access
+          South Asian markets, explore Africa, enter Australia or
+          build an international partnership, we bring together
+          the strategic thinking and relationships required to
+          take the next step.”
+        </p>
+
+        <a
+          class="button"
+          href="#contact"
+        >
+          START A CONVERSATION <span>↗</span>
+        </a>
+
       </div>
+
     </section>
 
-    <section id="contact" class="contact section">
-      <div class="container contact-grid">
-        <div class="contact-intro reveal">
-          <p class="eyebrow">LET'S CONNECT</p>
-          <h2>Start a conversation.</h2>
-          <p class="contact-supporting">Tell us where you want to go. We'll help explore what comes next.</p>
 
-          <div class="brand-lockup" aria-label="Meraki × Four Pillars logo">
+    <!-- =======================================================
+         CONTACT
+    ======================================================== -->
+
+    <section
+      id="contact"
+      class="contact section"
+    >
+
+      <div class="container contact-grid">
+
+        <div class="contact-intro reveal">
+
+          <p class="eyebrow">
+            LET'S CONNECT
+          </p>
+
+          <h2>
+            Start a conversation.
+          </h2>
+
+          <p class="contact-supporting">
+            Tell us where you want to go.
+            We'll help explore what comes next.
+          </p>
+
+
+          <div
+            class="brand-lockup"
+            aria-label="Meraki × Four Pillars logo"
+          >
+
             <div class="brand-lockup-frame">
-              <img src="meraki-four-pillars.jpeg" alt="Meraki × Four Pillars official logo">
+
+              <img
+                src="meraki-four-pillars.jpeg"
+                alt="Meraki × Four Pillars official logo"
+                loading="lazy"
+              >
+
             </div>
+
           </div>
+
 
           <div class="contact-meta">
+
             <div class="meta-row">
-              <span class="meta-label">FOUR PILLARS BUSINESS SERVICES</span>
-              <span class="meta-value">Dubai · Global Reach</span>
+
+              <span class="meta-label">
+                FOUR PILLARS BUSINESS SERVICES
+              </span>
+
+              <span class="meta-value">
+                Dubai · Global Reach
+              </span>
+
             </div>
+
+
             <div class="meta-row">
-              <span class="meta-label">Email</span>
-              <a class="contact-link" href="mailto:hello@fourpillars.ae">hello@fourpillars.ae</a>
+
+              <span class="meta-label">
+                Email
+              </span>
+
+              <a
+                class="contact-link"
+                href="mailto:hello@fourpillars.ae"
+              >
+                hello@fourpillars.ae
+              </a>
+
             </div>
+
+
             <div class="meta-row">
-              <span class="meta-label">Markets</span>
-              <span class="meta-value">GCC · South Asia · Africa · Australia</span>
+
+              <span class="meta-label">
+                Markets
+              </span>
+
+              <span class="meta-value">
+                GCC · South Asia · Africa · Australia
+              </span>
+
             </div>
-            <p class="trust-line">Confidential enquiries · International market focus</p>
+
+            <p class="trust-line">
+              Confidential enquiries · International market focus
+            </p>
+
           </div>
+
         </div>
+
 
         <div class="contact-panel reveal reveal-delay">
+
           <div class="contact-panel-inner">
-            <p class="eyebrow eyebrow-panel">CONTACT</p>
-            <form id="contact-form" novalidate>
-              <div class="field-group">
-                <label for="name">Full Name *</label>
-                <input id="name" name="name" type="text" required>
-              </div>
+
+            <p class="eyebrow eyebrow-panel">
+              CONTACT
+            </p>
+
+
+            <form
+              id="contact-form"
+            >
 
               <div class="field-group">
-                <label for="email">Work Email *</label>
-                <input id="email" name="email" type="email" required>
+
+                <label for="name">
+                  Full Name *
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autocomplete="name"
+                  required
+                >
+
               </div>
+
 
               <div class="field-group">
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text">
+
+                <label for="email">
+                  Work Email *
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                >
+
               </div>
+
 
               <div class="field-group">
-                <label for="message">What are you looking to achieve? *</label>
-                <textarea id="message" name="message" required placeholder="Tell us about your market, opportunity or expansion plans…"></textarea>
+
+                <label for="company">
+                  Company
+                </label>
+
+                <input
+                  id="company"
+                  name="company"
+                  type="text"
+                  autocomplete="organization"
+                >
+
               </div>
 
-              <button class="button premium-button" type="submit">SUBMIT ENQUIRY <span>↗</span></button>
-              <p class="form-status" role="status" aria-live="polite"></p>
+
+              <div class="field-group">
+
+                <label for="message">
+                  What are you looking to achieve? *
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell us about your market, opportunity or expansion plans…"
+                ></textarea>
+
+              </div>
+
+
+              <button
+                class="button premium-button"
+                type="submit"
+              >
+                SUBMIT ENQUIRY <span>↗</span>
+              </button>
+
+              <p
+                class="form-status"
+                role="status"
+                aria-live="polite"
+              ></p>
+
             </form>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+
   <footer>
+
     <div class="container footer-main">
-      <a class="brand" href="#top" aria-label="Four Pillars home">
-        <img class="official-logo footer-logo" src="meraki-four-pillars.jpeg" alt="Meraki × Four Pillars">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Four Pillars home"
+      >
+
+        <img
+          class="official-logo footer-logo"
+          src="meraki-four-pillars.jpeg"
+          alt="Meraki × Four Pillars"
+          loading="lazy"
+        >
+
       </a>
 
-      <p>FOUR PILLARS BUSINESS SERVICES<br>Strategy. Networks. Opportunities. Growth.</p>
 
-      <a class="footer-email" href="mailto:hello@fourpillars.ae">hello@fourpillars.ae <span>↗</span></a>
+      <p>
+        FOUR PILLARS BUSINESS SERVICES<br>
+        Strategy. Networks. Opportunities. Growth.
+      </p>
+
+
+      <a
+        class="footer-email"
+        href="mailto:hello@fourpillars.ae"
+      >
+        hello@fourpillars.ae <span>↗</span>
+      </a>
+
     </div>
+
 
     <div class="container footer-bottom">
-      <span>© <span id="year"></span> Four Pillars Business Services. All rights reserved.</span>
-      <span>Approach · Services · Sectors · Markets · Contact</span>
+
+      <span>
+        © <span id="year"></span>
+        Four Pillars Business Services.
+        All rights reserved.
+      </span>
+
+      <span>
+        Approach · Services · Sectors · Markets · Contact
+      </span>
+
     </div>
+
   </footer>
 
-  <script src="style.js"></script>
+
+  <script>
+    const header = document.querySelector('[data-header]');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuClose = document.querySelector('.menu-close');
+    const navLinks = document.querySelectorAll('.mobile-menu a, .desktop-nav a');
+    const yearTarget = document.getElementById('year');
+    const form = document.getElementById('contact-form');
+    const formStatus = document.querySelector('.form-status');
+    const revealItems = document.querySelectorAll('.reveal');
+    const heroVideo = document.querySelector('.hero-video');
+
+    if (yearTarget) yearTarget.textContent = new Date().getFullYear();
+
+    const playHeroVideo = () => {
+      if (!heroVideo) return;
+      const playAttempt = heroVideo.play();
+      if (playAttempt && typeof playAttempt.catch === 'function') playAttempt.catch(() => {});
+    };
+
+    playHeroVideo();
+    document.addEventListener('pointerdown', playHeroVideo, { once: true, passive: true });
+    document.addEventListener('keydown', playHeroVideo, { once: true });
+
+    const setHeaderState = () => {
+      if (header) header.classList.toggle('scrolled', window.scrollY > 20);
+    };
+
+    setHeaderState();
+    window.addEventListener('scroll', setHeaderState, { passive: true });
+
+    const closeMenu = () => {
+      if (!mobileMenu || !menuToggle) return;
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    };
+
+    const openMenu = () => {
+      if (!mobileMenu || !menuToggle) return;
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Close navigation menu');
+    };
+
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        if (menuToggle.getAttribute('aria-expanded') === 'true') closeMenu();
+        else openMenu();
+      });
+    }
+
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    navLinks.forEach((link) => link.addEventListener('click', () => {
+      if (window.innerWidth <= 980) closeMenu();
+    }));
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('visible'));
+    }
+
+    if (form) {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const formData = new FormData(form);
+        const name = (formData.get('name') || '').toString().trim();
+        const email = (formData.get('email') || '').toString().trim();
+        const company = (formData.get('company') || '').toString().trim();
+        const message = (formData.get('message') || '').toString().trim();
+
+        if (!name || !email || !message) {
+          if (formStatus) formStatus.textContent = 'Please complete the required fields.';
+          return;
+        }
+
+        const subject = `Four Pillars enquiry from ${name}`;
+        const body = [`Name: ${name}`, `Work email: ${email}`, `Company: ${company || 'Not provided'}`, '', message].join('\n');
+        window.location.href = `mailto:hello@fourpillars.ae?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        if (formStatus) formStatus.textContent = 'Your email client is opening with your enquiry.';
+      });
+    }
+  </script>
+
 </body>
 </html>
