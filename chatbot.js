@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // WHATSAPP BUTTON
   // ==========================================
 
-function addWhatsAppButton() {
+  function addWhatsAppButton() {
   const wrapper = document.createElement("div");
 
   wrapper.className = "chat-whatsapp-wrapper";
@@ -66,6 +66,7 @@ function addWhatsAppButton() {
 
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
+
   // ==========================================
   // SEND MESSAGE
   // ==========================================
