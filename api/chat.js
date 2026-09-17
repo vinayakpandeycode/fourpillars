@@ -1,40 +1,89 @@
-export default async function handler(req, res) {
+export default async (req) => {
   if (req.method !== "POST") {
-    return res.status(405).json({
-      error: "Method not allowed"
-    });
+    return new Response(
+      JSON.stringify({
+        error: "Method not allowed"
+      }),
+      {
+        status: 405,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
   }
 
   try {
-    const { question, conversation = [] } = req.body || {};
+    const body = await req.json();
+
+    const question =
+      typeof body.question === "string"
+        ? body.question.trim()
+        : "";
+
+    const conversation =
+      Array.isArray(body.conversation)
+        ? body.conversation
+            .filter(
+              (item) =>
+                item &&
+                (item.role === "user" ||
+                  item.role === "assistant") &&
+                typeof item.content === "string"
+            )
+            .slice(-10)
+            .map((item) => ({
+              role: item.role,
+              content: item.content.slice(0, 3000)
+            }))
+        : [];
 
     if (!question) {
-      return res.status(400).json({
-        error: "Question is required"
-      });
+      return new Response(
+        JSON.stringify({
+          error: "Question is required"
+        }),
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
     }
 
-    const apiKey = process.env.OPENROUTER_API_KEY;
+    const apiKey =
+      process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
-      console.error("OPENROUTER_API_KEY missing");
+      console.error(
+        "OPENROUTER_API_KEY is missing"
+      );
 
-      return res.status(500).json({
-        error: "AI service is not configured"
-      });
+      return new Response(
+        JSON.stringify({
+          error: "AI service is not configured"
+        }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      );
     }
 
     const companyKnowledge = `
-You are the official AI assistant for Four Pillars Business Services.
+FOUR PILLARS BUSINESS SERVICES
+
+Tagline:
+Connecting Markets. Creating Opportunities. Scaling Businesses.
 
 Company:
 Four Pillars Business Services is a Dubai-based cross-border consulting
 and business development firm helping companies, investors, institutions
 and entrepreneurs identify opportunities, enter new markets and build
 sustainable international growth.
-
-Tagline:
-Connecting Markets. Creating Opportunities. Scaling Businesses.
 
 Markets:
 - GCC
@@ -56,94 +105,181 @@ Services:
 5. Opportunity & Investment Advisory
 6. Network & Market Access
 
-Four Pillars:
+Approach:
 - Strategy
 - Market Access
 - Network
 - Execution
 
-Contact:
-Email: info@fourpillars.co
-Phone: +91 88285 86487
-Location: Dubai, UAE
+Location:
+Dubai, UAE
+
+Email:
+info@fourpillars.co
+
+Phone:
++91 88285 86487
 
 Consultation:
 Visitors can schedule a consultation through the website
 or contact info@fourpillars.co.
 
+Do not invent prices, clients, partnerships, projects,
+offices, guarantees or investment returns.
+Do not provide legal, tax or financial advice.
+`;
+
+    const systemPrompt = `
+You are the official AI assistant for Four Pillars Business Services.
+
+Help website visitors understand:
+- the company
+- services
+- sectors
+- markets
+- international expansion
+- consultation process
+
+Use ONLY the official company information below.
+
 Rules:
-- Never invent company information.
-- Never invent prices, clients, projects or partnerships.
-- Never guarantee investment returns or business results.
-- Do not provide legal, tax or financial advice.
-- If information is unavailable, direct the visitor to info@fourpillars.co.
-- Keep answers concise and professional.
-- Answer in the visitor's language when practical.
+1. Never invent company information.
+2. Never invent prices or clients.
+3. Never guarantee business results.
+4. Never guarantee investment returns.
+5. Do not provide legal, tax or financial advice.
+6. If information is unavailable, direct the visitor to
+   info@fourpillars.co.
+7. Be professional and concise.
+8. Answer in the same language as the visitor when practical.
+
+OFFICIAL COMPANY INFORMATION:
+
+${companyKnowledge}
 `;
 
     const messages = [
       {
         role: "system",
-        content: companyKnowledge
+        content: systemPrompt
       },
-      ...(Array.isArray(conversation)
-        ? conversation.slice(-10)
-        : []),
+      ...conversation,
       {
         role: "user",
         content: question
       }
     ];
 
-    const result = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          "Content-Type": "application/json",
-          "HTTP-Referer": "https://fourpillars.co",
-          "X-Title": "Four Pillars Business Services"
-        },
-        body: JSON.stringify({
-          model: "openrouter/free",
-          messages,
-          temperature: 0.3,
-          max_tokens: 500
-        })
-      }
-    );
+    const openRouterResponse =
+      await fetch(
+        "https://openrouter.ai/api/v1/chat/completions",
+        {
+          method: "POST",
 
-    const data = await result.json();
+          headers: {
+            Authorization:
+              `Bearer ${apiKey}`,
 
-    if (!result.ok) {
-      console.error("OpenRouter error:", data);
+            "Content-Type":
+              "application/json",
 
-      return res.status(502).json({
-        error:
-          data?.error?.message ||
-          "OpenRouter request failed"
-      });
+            "HTTP-Referer":
+              "https://fourpillarswebsite.netlify.app",
+
+            "X-Title":
+              "Four Pillars Business Services"
+          },
+
+          body: JSON.stringify({
+            model:
+              process.env.OPENROUTER_MODEL ||
+              "openrouter/free",
+
+            messages,
+
+            temperature: 0.3,
+
+            max_tokens: 500
+          })
+        }
+      );
+
+    const data =
+      await openRouterResponse.json();
+
+    if (!openRouterResponse.ok) {
+      console.error(
+        "OpenRouter Error:",
+        data
+      );
+
+      return new Response(
+        JSON.stringify({
+          error:
+            data?.error?.message ||
+            "OpenRouter service error"
+        }),
+        {
+          status: 502,
+          headers: {
+            "Content-Type":
+              "application/json"
+          }
+        }
+      );
     }
 
     const answer =
       data?.choices?.[0]?.message?.content?.trim();
 
     if (!answer) {
-      return res.status(502).json({
-        error: "AI returned an empty response"
-      });
+      return new Response(
+        JSON.stringify({
+          error:
+            "AI returned an empty response"
+        }),
+        {
+          status: 502,
+          headers: {
+            "Content-Type":
+              "application/json"
+          }
+        }
+      );
     }
 
-    return res.status(200).json({
-      answer
-    });
+    return new Response(
+      JSON.stringify({
+        answer
+      }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type":
+            "application/json"
+        }
+      }
+    );
 
   } catch (error) {
-    console.error("Chat API error:", error);
 
-    return res.status(500).json({
-      error: "Internal server error"
-    });
+    console.error(
+      "Chat Function Error:",
+      error
+    );
+
+    return new Response(
+      JSON.stringify({
+        error:
+          "Internal server error"
+      }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type":
+            "application/json"
+        }
+      }
+    );
   }
-}
+};
