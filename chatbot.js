@@ -1,3 +1,4 @@
+
 // ==========================================
 // FOUR PILLARS AI CHATBOT
 // chatbot.js
@@ -31,8 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // ==========================================
 
   // IMPORTANT:
-  // WhatsApp number must contain ONLY digits.
-  // Do NOT add +, spaces or hyphens here.
+  // ONLY DIGITS.
+  // NO + SIGN
+  // NO SPACES
+  // NO HYPHENS
 
   const WHATSAPP_NUMBER = "918828586487";
 
@@ -46,17 +49,20 @@ document.addEventListener("DOMContentLoaded", function () {
     encodeURIComponent(WHATSAPP_MESSAGE);
 
   // ==========================================
-  // ADD MESSAGE
+  // ADD CHAT MESSAGE
   // ==========================================
 
   function addMessage(text, sender) {
 
     const message = document.createElement("div");
 
-    message.className =
-      sender === "user"
-        ? "chat-message user-message"
-        : "chat-message assistant-message";
+    if (sender === "user") {
+      message.className =
+        "chat-message user-message user";
+    } else {
+      message.className =
+        "chat-message assistant-message bot";
+    }
 
     message.textContent = text;
 
@@ -75,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function addWhatsAppButton() {
 
     // Prevent duplicate WhatsApp buttons
+
     const existingButton =
       chatMessages.querySelector(
         ".chat-whatsapp-wrapper"
@@ -93,9 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const button =
       document.createElement("a");
 
-    button.href = WHATSAPP_URL;
+    button.href =
+      WHATSAPP_URL;
 
-    button.target = "_blank";
+    button.target =
+      "_blank";
 
     button.rel =
       "noopener noreferrer";
@@ -127,21 +136,37 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Show user message
+    // Prevent multiple requests
+
+    if (
+      chatInput.disabled ||
+      chatSend.disabled
+    ) {
+      return;
+    }
+
+    // ========================================
+    // SHOW USER MESSAGE
+    // ========================================
+
     addMessage(
       question,
       "user"
     );
 
     // Clear input
+
     chatInput.value = "";
 
     // Disable controls
-    chatInput.disabled = true;
 
+    chatInput.disabled = true;
     chatSend.disabled = true;
 
-    // Show typing message
+    // ========================================
+    // SHOW THINKING MESSAGE
+    // ========================================
+
     const typingMessage =
       addMessage(
         "Thinking...",
@@ -202,13 +227,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
       } catch (jsonError) {
 
+        console.error(
+          "Invalid JSON response:",
+          jsonError
+        );
+
         throw new Error(
           "Server returned an invalid response."
         );
-
       }
 
-      // Remove typing message
+      // Remove thinking message
+
       if (typingMessage) {
         typingMessage.remove();
       }
@@ -220,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!response.ok) {
 
         console.error(
-          "Four Pillars AI API error:",
+          "Four Pillars AI API Error:",
           data
         );
 
@@ -231,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // ======================================
-      // AI ANSWER
+      // GET AI ANSWER
       // ======================================
 
       const answer =
@@ -241,13 +271,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (!answer) {
 
-        throw new Error(
-          "The AI returned an empty response."
+        console.error(
+          "Empty AI response:",
+          data
         );
 
+        throw new Error(
+          "AI returned an empty response."
+        );
       }
 
-      // Show AI answer
+      // ======================================
+      // DISPLAY AI ANSWER
+      // ======================================
+
       addMessage(
         answer,
         "assistant"
@@ -258,22 +295,17 @@ document.addEventListener("DOMContentLoaded", function () {
       // ======================================
 
       conversation.push({
-
         role: "user",
-
         content: question
-
       });
 
       conversation.push({
-
         role: "assistant",
-
         content: answer
-
       });
 
-      // Keep only latest messages
+      // Keep latest 10 messages
+
       conversation =
         conversation.slice(-10);
 
@@ -292,21 +324,23 @@ document.addEventListener("DOMContentLoaded", function () {
         error
       );
 
-      // Remove typing message
+      // Remove thinking message
+
       if (typingMessage) {
         typingMessage.remove();
       }
 
-      // Show error message
+      // ======================================
+      // ERROR MESSAGE
+      // ======================================
+
       addMessage(
-
         "I'm currently unable to connect to the AI assistant. Please contact info@fourpillars.co or continue on WhatsApp for assistance.",
-
         "assistant"
-
       );
 
-      // WhatsApp option
+      // WhatsApp fallback
+
       addWhatsAppButton();
 
     }
@@ -314,14 +348,12 @@ document.addEventListener("DOMContentLoaded", function () {
     finally {
 
       // Re-enable controls
-      chatInput.disabled = false;
 
+      chatInput.disabled = false;
       chatSend.disabled = false;
 
       chatInput.focus();
-
     }
-
   }
 
   // ==========================================
@@ -331,9 +363,7 @@ document.addEventListener("DOMContentLoaded", function () {
   chatSend.addEventListener(
     "click",
     function () {
-
       sendMessage();
-
     }
   );
 
@@ -345,14 +375,15 @@ document.addEventListener("DOMContentLoaded", function () {
     "keydown",
     function (event) {
 
-      if (event.key === "Enter") {
+      if (
+        event.key === "Enter" &&
+        !event.shiftKey
+      ) {
 
         event.preventDefault();
 
         sendMessage();
-
       }
-
     }
   );
 
@@ -382,11 +413,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
+      if (
+        chatInput.disabled
+      ) {
+        return;
+      }
+
       chatInput.value =
         question;
 
       sendMessage();
-
     }
   );
 
@@ -399,21 +435,22 @@ document.addEventListener("DOMContentLoaded", function () {
   ) {
 
     addMessage(
-
       "Hello. Welcome to Four Pillars Business Services. I can help you learn about our services, sectors, markets and consultation process.",
-
       "assistant"
-
     );
-
   }
 
   // ==========================================
-  // DEBUG INFORMATION
+  // DEBUG
   // ==========================================
 
   console.log(
     "Four Pillars AI Chatbot initialized."
+  );
+
+  console.log(
+    "WhatsApp number:",
+    WHATSAPP_NUMBER
   );
 
   console.log(
