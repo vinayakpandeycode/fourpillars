@@ -46,28 +46,26 @@ document.addEventListener("DOMContentLoaded", function () {
   // WHATSAPP BUTTON
   // ==========================================
 
-  function addWhatsAppButton() {
+function addWhatsAppButton() {
+  const wrapper = document.createElement("div");
 
-    const wrapper = document.createElement("div");
+  wrapper.className = "chat-whatsapp-wrapper";
 
-    wrapper.className = "chat-whatsapp-wrapper";
+  wrapper.innerHTML = `
+    <a
+      href="https://wa.me/918828586487?text=Hello%20Four%20Pillars%2C%20I%20would%20like%20to%20discuss%20a%20business%20opportunity."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="chat-whatsapp-button"
+    >
+      Continue on WhatsApp
+    </a>
+  `;
 
-    wrapper.innerHTML = `
-      <a
-        href="https://wa.me/918828586487?text=Hello%20Four%20Pillars%2C%20I%20would%20like%20to%20discuss%20a%20business%20opportunity."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="chat-whatsapp-button"
-      >
-        Continue on WhatsApp
-      </a>
-    `;
+  chatMessages.appendChild(wrapper);
 
-    chatMessages.appendChild(wrapper);
-
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-  }
-
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
   // ==========================================
   // SEND MESSAGE
   // ==========================================
