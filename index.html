@@ -3,1873 +3,4001 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Four Pillars Business Advisory | Connecting Markets. Creating Opportunities.</title>
-  <meta name="description" content="Four Pillars Business Advisory is a Dubai-based cross-border consulting and business development firm connecting businesses, investors and opportunities across the GCC, South Asia, Africa and Australia." />
-  <meta name="theme-color" content="#061d18" />
+
+  <title>Four Pillars Business Services</title>
+
+  <meta
+    name="description"
+    content="Four Pillars Business Services is a Dubai-based cross-border consulting and business development firm helping companies, investors, institutions and entrepreneurs identify opportunities, enter new markets and build sustainable international growth."
+  />
+
+  <meta name="theme-color" content="#011A15" />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    :root{
-      --forest:#061d18;
-      --deep:#082d24;
-      --deep-2:#0b3a2f;
-      --gold:#caa45d;
-      --gold-2:#dfc382;
-      --cream:#f7f1e6;
-      --ivory:#efe6d7;
-      --muted:#9aa49e;
-      --line:rgba(223,195,130,.22);
-      --line-dark:rgba(6,29,24,.14);
-      --shadow:0 28px 80px rgba(0,0,0,.18);
-      --ease:cubic-bezier(.22,1,.36,1);
+
+    /* =========================================================
+       ROOT
+    ========================================================= */
+
+    :root {
+      --deep-green: #011A15;
+      --forest-green: #02271F;
+      --bottle-green: #063B2D;
+
+      --gold: #C9A35A;
+      --gold-light: #D8B66A;
+      --gold-dark: #A77A32;
+
+      --cream: #F8F5EC;
+      --ivory: #F3EBDD;
+
+      --white-soft: rgba(248, 245, 236, 0.78);
+      --white-muted: rgba(248, 245, 236, 0.62);
+
+      --gold-line: rgba(201, 163, 90, 0.30);
+
+      --max-width: 1280px;
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:"Manrope",sans-serif;
-      background:var(--ivory);
-      color:var(--deep);
-      overflow-x:hidden;
-    }
-    img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
-    button,input,textarea{font:inherit}
-    button{cursor:pointer}
-    ::selection{background:var(--gold);color:var(--deep)}
+    /* =========================================================
+       RESET
+    ========================================================= */
 
-    .container{
-      width:min(1240px,calc(100% - 48px));
-      margin-inline:auto;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* ---------------- BACKGROUND ---------------- */
-    .site-bg{
-      position:fixed;
-      inset:0;
-      z-index:-10;
-      background:var(--forest);
-      overflow:hidden;
+    html {
+      scroll-behavior: smooth;
     }
-    .site-bg video{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:.56;
-      filter:saturate(.72) contrast(1.05);
-      transform:scale(1.045);
+
+    body {
+      background: var(--deep-green);
+      color: var(--cream);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
-    .site-bg::before{
-      content:"";
-      position:absolute;
-      inset:0;
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 1000;
+
+      padding: 13px 5vw;
+
+      transition: all 0.35s ease;
+    }
+
+    .header.scrolled {
+      background: rgba(1, 26, 21, 0.94);
+      backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(201, 163, 90, 0.18);
+
+      padding-top: 7px;
+      padding-bottom: 7px;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    /* ACTUAL COMPANY LOGO */
+
+    .header-logo {
+      width: 92px;
+      height: 58px;
+
+      object-fit: contain;
+
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: 9px;
+      font-weight: 600;
+
+      letter-spacing: 1.6px;
+
+      color: rgba(248, 245, 236, 0.88);
+
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-consultation {
+      border: 1px solid var(--gold);
+
+      padding: 10px 15px;
+
+      color: var(--gold-light) !important;
+    }
+
+    .mobile-menu {
+      display: none;
+
+      border: 0;
+      background: transparent;
+
+      color: var(--cream);
+
+      font-size: 27px;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background: var(--deep-green);
+    }
+
+    .hero-video {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 1;
+
       background:
-        linear-gradient(90deg,rgba(4,24,19,.74) 0%,rgba(4,24,19,.40) 42%,rgba(4,24,19,.18) 72%,rgba(4,24,19,.42) 100%),
-        linear-gradient(180deg,rgba(4,24,19,.26),rgba(4,24,19,.72));
-      z-index:1;
-    }
-    .site-bg::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      z-index:2;
-      background:radial-gradient(circle at 76% 22%,rgba(202,164,93,.12),transparent 30%);
-      pointer-events:none;
+        linear-gradient(
+          90deg,
+          rgba(1, 26, 21, 0.97) 0%,
+          rgba(1, 26, 21, 0.91) 35%,
+          rgba(1, 26, 21, 0.70) 62%,
+          rgba(1, 26, 21, 0.84) 100%
+        );
     }
 
-    /* ---------------- HEADER ---------------- */
-    .header{
-      position:fixed;
-      inset:0 0 auto;
-      z-index:100;
-      border-bottom:1px solid rgba(223,195,130,.18);
-      background:rgba(4,27,21,.16);
-      backdrop-filter:blur(12px);
-      transition:.35s ease;
-    }
-    .header.scrolled{
-      background:rgba(4,27,21,.93);
-      border-color:rgba(223,195,130,.28);
-    }
-    .header-inner{
-      min-height:80px;
-      display:grid;
-      grid-template-columns:210px 1fr auto;
-      align-items:center;
-      gap:26px;
-    }
-    .brand{
-      width:170px;
-      height:54px;
-      display:flex;
-      align-items:center;
-      overflow:hidden;
-    }
-    .brand img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      object-position:left center;
-    }
-    .nav{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:clamp(20px,2.8vw,42px);
-    }
-    .nav a,.header-cta,.mobile-menu a{
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .nav a{
-      position:relative;
-      color:rgba(247,241,230,.84);
-      font-size:.68rem;
-      padding:7px 0;
-    }
-    .nav a::after{
-      content:"";
-      position:absolute;
-      left:0;right:0;bottom:0;
-      height:1px;
-      background:var(--gold);
-      transform:scaleX(0);
-      transform-origin:left;
-      transition:transform .35s var(--ease);
-    }
-    .nav a:hover::after{transform:scaleX(1)}
-    .header-cta{
-      min-height:48px;
-      padding:0 22px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(223,195,130,.45);
-      color:var(--gold-2);
-      font-size:.66rem;
-      transition:.3s ease;
-    }
-    .header-cta:hover{
-      background:var(--gold);
-      color:var(--deep);
-    }
-    .menu-toggle{
-      display:none;
-      border:0;
-      background:none;
-      color:var(--cream);
-      font-size:.66rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .mobile-menu{
-      position:fixed;
-      inset:80px 0 auto;
-      z-index:99;
-      background:rgba(4,24,19,.98);
-      border-bottom:1px solid var(--line);
-      transform:translateY(-110%);
-      opacity:0;
-      visibility:hidden;
-      transition:.35s var(--ease);
-    }
-    .mobile-menu.open{
-      transform:translateY(0);
-      opacity:1;
-      visibility:visible;
-    }
-    .mobile-menu nav{
-      width:min(1240px,calc(100% - 48px));
-      margin:auto;
-      display:grid;
-    }
-    .mobile-menu a{
-      padding:17px 0;
-      border-bottom:1px solid rgba(247,241,230,.12);
-      color:var(--cream);
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.05rem;
-      text-transform:none;
-      letter-spacing:0;
+    .hero-content {
+      position: relative;
+
+      z-index: 3;
+
+      width: 100%;
+
+      max-width: var(--max-width);
+
+      margin: auto;
+
+      padding: 145px 5vw 90px;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(350px, 0.85fr);
+
+      gap: 60px;
+
+      align-items: center;
     }
 
-    /* ---------------- TYPOGRAPHY ---------------- */
-    .eyebrow{
-      color:var(--gold);
-      font-size:.68rem;
-      letter-spacing:.20em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .display{
-      margin:0;
-      font-family:"Cormorant Garamond",serif;
-      font-weight:600;
-      letter-spacing:-.045em;
-      line-height:.90;
-    }
-    .gold{color:var(--gold-2);font-style:italic;font-weight:500}
-    .section-title{
-      margin:0;
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(3rem,5vw,5.4rem);
-      line-height:.91;
-      letter-spacing:-.04em;
-      font-weight:600;
+    .hero-left {
+      max-width: 760px;
     }
 
-    /* ---------------- HERO ---------------- */
-    .hero{
-      position:relative;
-      min-height:100svh;
-      padding-top:80px;
-      color:var(--cream);
-    }
-    .hero-inner{
-      width:min(1240px,calc(100% - 48px));
-      min-height:calc(100svh - 80px);
-      margin:auto;
-      display:grid;
-      grid-template-columns:minmax(0,1.10fr) minmax(360px,.62fr);
-      align-items:end;
-      gap:72px;
-      padding:78px 0 78px;
-    }
-    .hero-copy{
-      position:relative;
-      padding:0 0 20px 30px;
-    }
-    .hero-copy::before{
-      content:"";
-      position:absolute;
-      left:0;top:0;bottom:0;
-      width:1px;
-      background:linear-gradient(var(--gold),rgba(202,164,93,.25),transparent);
-    }
-    .hero-pill{
-      width:max-content;
-      max-width:100%;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      min-height:40px;
-      padding:0 17px;
-      border:1px solid rgba(223,195,130,.42);
-      border-radius:999px;
-      background:rgba(5,30,23,.32);
-      backdrop-filter:blur(7px);
-      color:var(--gold-2);
-      font-size:.66rem;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .hero-pill i{
-      width:6px;height:6px;border-radius:50%;
-      background:var(--gold);
-      box-shadow:0 0 16px rgba(202,164,93,.5);
-    }
-    .hero-kicker{
-      margin-top:36px;
-      color:rgba(247,241,230,.78);
-      font-size:.70rem;
-      letter-spacing:.19em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .hero h1{
-      max-width:820px;
-      margin-top:15px;
-      font-size:clamp(4.0rem,6.25vw,6.65rem);
-    }
-    .hero-lede{
-      max-width:740px;
-      margin-top:30px;
-      color:rgba(247,241,230,.83);
-      font-size:clamp(1rem,1.2vw,1.12rem);
-      line-height:1.72;
-    }
-    .hero-actions{
-      margin-top:34px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-    }
-    .btn{
-      min-height:52px;
-      padding:0 26px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:11px;
-      border:1px solid var(--gold);
-      font-size:.66rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      transition:.3s ease;
-    }
-    .btn-primary{background:var(--gold);color:var(--deep)}
-    .btn-primary:hover{background:transparent;color:var(--gold-2);transform:translateY(-2px)}
-    .btn-ghost{
-      background:rgba(3,28,22,.25);
-      color:var(--cream);
-      border-color:rgba(223,195,130,.38);
-      backdrop-filter:blur(6px)
-    }
-    .btn-ghost:hover{border-color:var(--gold);color:var(--gold-2)}
+    .eyebrow {
+      display: flex;
+      align-items: center;
 
-    .hero-card{
-      margin-bottom:24px;
-      padding:24px;
-      border:1px solid rgba(223,195,130,.30);
-      border-radius:18px;
-      background:rgba(2,35,28,.66);
-      backdrop-filter:blur(15px);
-      box-shadow:var(--shadow);
-    }
-    .hero-card-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:22px;
-      color:var(--gold-2);
-      font-size:.66rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-    .hero-card-visual{
-      min-height:330px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(223,195,130,.22);
-      border-radius:12px;
-      background:rgba(1,25,19,.45);
-    }
-    .hero-card-visual img{
-      width:min(250px,76%);
-      max-height:235px;
-      object-fit:contain;
-    }
-    .hero-card-bottom{
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      padding-top:17px;
-      margin-top:18px;
-      border-top:1px solid rgba(223,195,130,.20);
-      color:rgba(247,241,230,.64);
-      font-size:.70rem;
-    }
-    .hero-card-bottom strong{color:var(--gold-2)}
-    .hero-bottom{
-      position:absolute;
-      inset:auto 0 0;
-      border-top:1px solid rgba(223,195,130,.20);
-    }
-    .hero-bottom-inner{
-      width:min(1240px,calc(100% - 48px));
-      min-height:58px;
-      margin:auto;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      color:rgba(247,241,230,.55);
-      font-size:.62rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .hero-bottom a{color:var(--gold-2)}
+      gap: 12px;
 
-    /* ---------------- STATS ---------------- */
-    .stats{
-      background:var(--cream);
-      border-top:1px solid rgba(223,195,130,.26);
-      border-bottom:1px solid rgba(6,29,24,.12);
-    }
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-    }
-    .stat{
-      padding:28px 24px;
-      border-right:1px solid rgba(6,29,24,.12);
-    }
-    .stat:last-child{border-right:0}
-    .stat b{
-      display:block;
-      color:var(--gold);
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.35rem;
-      line-height:1;
-    }
-    .stat span{
-      display:block;
-      margin-top:8px;
-      color:rgba(8,45,36,.62);
-      font-size:.67rem;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      font-weight:800;
+      color: var(--gold-light);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 2.8px;
+
+      margin-bottom: 25px;
     }
 
-    /* ---------------- ABOUT ---------------- */
-    .light{
-      background:var(--ivory);
-      color:var(--deep);
-    }
-    .dark{
-      background:var(--deep);
-      color:var(--cream);
-    }
-    .section{
-      padding:126px 0;
-    }
-    .split{
-      display:grid;
-      grid-template-columns:.78fr 1.22fr;
-      gap:80px;
-      align-items:start;
-    }
-    .copy{
-      color:rgba(8,45,36,.68);
-      font-size:1.02rem;
-      line-height:1.82;
-    }
-    .copy strong{color:var(--deep)}
-    .about-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0 46px;
-      margin-top:56px;
-      border-top:1px solid var(--line-dark);
-    }
-    .about-item{
-      padding:27px 0;
-      border-bottom:1px solid var(--line-dark);
-    }
-    .about-item h3{
-      margin:0 0 10px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:2rem;
-      font-weight:600;
-    }
-    .about-item p{
-      color:rgba(8,45,36,.62);
-      line-height:1.7;
+    .eyebrow::before {
+      content: "";
+
+      width: 34px;
+      height: 1px;
+
+      background: var(--gold);
     }
 
-    /* ---------------- APPROACH ---------------- */
-    .approach-layout{
-      display:grid;
-      grid-template-columns:.62fr 1.38fr;
-      gap:78px;
-    }
-    .approach-intro p{
-      max-width:430px;
-      margin-top:24px;
-      color:rgba(247,241,230,.70);
-      line-height:1.78;
-    }
-    .approach-list{
-      border-top:1px solid var(--line);
-    }
-    .approach-row{
-      display:grid;
-      grid-template-columns:58px 1fr 1.05fr 25px;
-      gap:20px;
-      align-items:center;
-      padding:25px 0;
-      border-bottom:1px solid var(--line);
-    }
-    .approach-no{
-      color:var(--gold);
-      font-family:"Cormorant Garamond",serif;
-      font-size:2rem;
-    }
-    .approach-row h3{
-      margin:0;
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(1.55rem,2.2vw,2.35rem);
-      font-weight:600;
-    }
-    .approach-row p{
-      color:rgba(247,241,230,.58);
-      line-height:1.6;
-    }
-    .approach-arrow{color:var(--gold-2);font-size:1.2rem}
+    /*
+       MEDIUM HERO HEADING
+    */
 
-    /* ---------------- SERVICES ---------------- */
-    .service-list{border-top:1px solid var(--line-dark);margin-top:56px}
-    .service{
-      display:grid;
-      grid-template-columns:72px 1fr 1.15fr 28px;
-      gap:24px;
-      align-items:start;
-      padding:29px 0;
-      border-bottom:1px solid var(--line-dark);
-      transition:transform .35s var(--ease);
-    }
-    .service:hover{transform:translateX(8px)}
-    .service-no{
-      color:var(--gold);
-      font-family:"Cormorant Garamond",serif;
-      font-size:2rem;
-    }
-    .service h3{
-      margin:0;
-      font-family:"Cormorant Garamond",serif;
-      font-size:clamp(1.55rem,2.2vw,2.35rem);
-      line-height:1;
-      font-weight:600;
-    }
-    .service p{color:rgba(8,45,36,.64);line-height:1.7}
-    .service-arrow{color:var(--gold);font-size:1.35rem}
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
 
-    /* ---------------- REAL ESTATE + PROJECTS ---------------- */
-    .realestate{
-      position:relative;
-      overflow:hidden;
-      border-top:1px solid rgba(223,195,130,.19);
-      border-bottom:1px solid rgba(223,195,130,.19);
-    }
-    .realestate::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(90deg,rgba(2,39,31,.85),rgba(2,39,31,.72) 55%,rgba(2,39,31,.55));
-      pointer-events:none;
-    }
-    .realestate .container{position:relative;z-index:1}
-    .realestate-grid{
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:90px;
-      align-items:start;
-    }
-    .realestate p{
-      margin-top:25px;
-      color:rgba(247,241,230,.70);
-      line-height:1.8;
-      max-width:620px;
-    }
-    .project-rail{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:56px;
-    }
-    .project{
-      min-height:220px;
-      padding:24px;
-      border:1px solid rgba(223,195,130,.24);
-      background:rgba(4,28,22,.38);
-      backdrop-filter:blur(8px);
-    }
-    .project small{
-      color:var(--gold);
-      font-size:.63rem;
-      font-weight:800;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-    .project h3{
-      margin:48px 0 12px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.1rem;
-      font-weight:600;
-    }
-    .project p{margin:0;font-size:.88rem}
+      font-size: clamp(48px, 5.2vw, 76px);
 
-    /* ---------------- COLLABORATION ---------------- */
-    .collab-grid{
-      display:grid;
-      grid-template-columns:.95fr 1.05fr;
-      gap:74px;
-      align-items:center;
-    }
-    .collab-image{
-      padding:17px;
-      border:1px solid rgba(223,195,130,.30);
-      background:rgba(1,25,19,.24);
-    }
-    .collab-image img{
-      width:100%;
-      height:410px;
-      object-fit:contain;
-    }
-    .collab-copy p{
-      margin-top:24px;
-      max-width:590px;
-      color:rgba(247,241,230,.70);
-      line-height:1.78;
-    }
-    .collab-brand{
-      margin-top:18px;
-      color:var(--gold-2);
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.2rem;
+      font-weight: 500;
+
+      line-height: 0.98;
+
+      letter-spacing: -1.5px;
     }
 
-    /* ---------------- SECTORS ---------------- */
-    .sector-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0 54px;
-      margin-top:58px;
-      border-top:1px solid var(--line-dark);
-    }
-    .sector{
-      display:grid;
-      grid-template-columns:92px 1fr;
-      gap:24px;
-      padding:32px 0;
-      border-bottom:1px solid var(--line-dark);
-      min-width:0;
-    }
-    .sector-tag{
-      padding-top:2px;
-      color:var(--gold);
-      font-family:"Cormorant Garamond",serif;
-      font-size:1.15rem;
-      line-height:1.1;
-      text-transform:uppercase;
-    }
-    .sector h3{
-      margin:0 0 11px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.25rem;
-      line-height:.98;
-      font-weight:600;
-    }
-    .sector p{
-      color:rgba(8,45,36,.66);
-      line-height:1.7;
-    }
-    .sector em{
-      display:block;
-      margin-top:13px;
-      padding-top:13px;
-      border-top:1px solid rgba(6,29,24,.12);
-      color:rgba(8,45,36,.53);
-      font-size:.82rem;
-      font-style:normal;
-      line-height:1.55;
+    .hero h1 .gold {
+      color: var(--gold-light);
+
+      font-style: italic;
     }
 
-    /* ---------------- MARKETS ---------------- */
-    .markets-layout{
-      display:grid;
-      grid-template-columns:.75fr 1.25fr;
-      gap:80px;
-      align-items:start;
-    }
-    .market-intro p{
-      margin-top:24px;
-      max-width:520px;
-      color:rgba(247,241,230,.70);
-      line-height:1.8;
-    }
-    .market-tags{
-      margin-top:24px;
-      color:var(--gold-2);
-      font-size:.72rem;
-      letter-spacing:.14em;
-      font-weight:800;
-      text-transform:uppercase;
-    }
-    .market-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      border-top:1px solid var(--line);
-    }
-    .market{
-      min-height:190px;
-      padding:26px 0;
-      border-bottom:1px solid var(--line);
-      min-width:0;
-    }
-    .market:nth-child(odd){padding-right:28px;border-right:1px solid var(--line)}
-    .market:nth-child(even){padding-left:28px}
-    .market small{
-      color:var(--gold);
-      font-size:.64rem;
-      font-weight:800;
-      letter-spacing:.14em;
-    }
-    .market h3{
-      margin:25px 0 8px;
-      font-family:"Cormorant Garamond",serif;
-      font-size:2.25rem;
-      font-weight:600;
-    }
-    .market p{color:rgba(247,241,230,.60);line-height:1.65}
+    /*
+       MEDIUM EASY-TO-READ DESCRIPTION
+    */
 
-    /* ---------------- CONTACT ---------------- */
-    .contact{
-      background:var(--cream);
-      color:var(--deep);
-    }
-    .contact-layout{
-      display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:75px;
-      align-items:start;
-    }
-    .contact-text p{
-      margin-top:24px;
-      max-width:520px;
-      color:rgba(8,45,36,.67);
-      line-height:1.8;
-    }
-    .contact-meta{
-      margin-top:33px;
-      max-width:540px;
-    }
-    .meta{
-      padding:15px 0;
-      border-top:1px solid rgba(6,29,24,.13);
-    }
-    .meta:last-child{border-bottom:1px solid rgba(6,29,24,.13)}
-    .meta-label{
-      margin-bottom:5px;
-      color:var(--gold);
-      font-size:.63rem;
-      letter-spacing:.13em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .meta a,.meta span{
-      color:var(--deep);
-      font-weight:700;
-    }
-    .meta a:hover{color:var(--gold)}
-    .form-card{
-      padding:31px;
-      border:1px solid rgba(167,122,50,.42);
-      background:rgba(255,255,255,.28);
-    }
-    .form-card form{display:grid;gap:18px}
-    .field{display:grid;gap:7px}
-    .field label{
-      color:var(--deep);
-      font-size:.63rem;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
-    .field input,.field textarea{
-      width:100%;
-      padding:13px 0;
-      border:0;
-      border-bottom:1px solid rgba(6,29,24,.22);
-      background:transparent;
-      color:var(--deep);
-      outline:none;
-    }
-    .field input:focus,.field textarea:focus{border-color:var(--gold)}
-    .field textarea{min-height:125px;resize:vertical}
-    .form-status{
-      min-height:22px;
-      color:var(--deep);
-      font-size:.84rem;
-      font-weight:700;
-    }
-    .submit{
-      min-height:53px;
-      border:1px solid var(--deep);
-      background:var(--deep);
-      color:var(--cream);
-      font-size:.67rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:800;
-      transition:.3s ease;
-    }
-    .submit:hover{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+    .hero-description {
+      max-width: 720px;
 
-    /* ---------------- FOOTER ---------------- */
-    footer{
-      background:var(--deep);
-      color:var(--cream);
-      padding:48px 0 22px;
-    }
-    .footer-top{
-      display:grid;
-      grid-template-columns:.72fr 1.28fr auto;
-      gap:34px;
-      align-items:center;
-      padding-bottom:35px;
-    }
-    .footer-brand{
-      width:175px;
-      height:58px;
-    }
-    .footer-brand img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-    }
-    .footer-top p{
-      max-width:510px;
-      color:rgba(247,241,230,.62);
-      line-height:1.7;
-    }
-    .footer-email{color:var(--gold-2);font-weight:800}
-    .footer-bottom{
-      padding-top:17px;
-      border-top:1px solid rgba(247,241,230,.12);
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      color:rgba(247,241,230,.45);
-      font-size:.66rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
+      margin-top: 28px;
+
+      color: var(--white-soft);
+
+      font-size: 15px;
+
+      font-weight: 400;
+
+      line-height: 1.85;
+
+      letter-spacing: 0;
     }
 
-    /* ---------------- VIDEO CONTROLS ---------------- */
-    .video-controls{
-      position:fixed;
-      right:22px;
-      bottom:18px;
-      z-index:200;
-      display:flex;
-      border:1px solid rgba(223,195,130,.34);
-      background:rgba(2,35,28,.76);
-      backdrop-filter:blur(12px);
-    }
-    .video-btn{
-      min-width:102px;
-      min-height:45px;
-      padding:0 12px;
-      border:0;
-      border-right:1px solid rgba(223,195,130,.22);
-      background:transparent;
-      color:rgba(247,241,230,.78);
-      font-size:.59rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .video-btn:last-child{border-right:0}
-    .video-btn:hover{color:var(--gold-2);background:rgba(202,164,93,.08)}
+    .hero-buttons {
+      display: flex;
 
-    /* ---------------- RESPONSIVE ---------------- */
-    @media(max-width:1050px){
-      .header-inner{grid-template-columns:185px 1fr auto}
-      .nav{gap:20px}
-      .hero-inner{grid-template-columns:1fr;padding-top:70px}
-      .hero-card{max-width:520px;margin-left:auto}
-      .hero h1{font-size:clamp(3.8rem,8vw,6rem)}
-      .split,.approach-layout,.realestate-grid,.collab-grid,.markets-layout,.contact-layout{grid-template-columns:1fr;gap:48px}
-      .project-rail{grid-template-columns:1fr}
-      .footer-top{grid-template-columns:1fr}
-    }
-    @media(max-width:820px){
-      .nav,.header-cta{display:none}
-      .menu-toggle{display:block}
-      .header-inner{grid-template-columns:1fr auto}
-      .stats-grid{grid-template-columns:1fr 1fr}
-      .stat:nth-child(2){border-right:0}
-      .stat:nth-child(-n+2){border-bottom:1px solid rgba(6,29,24,.12)}
-      .approach-row,.service{grid-template-columns:52px 1fr}
-      .approach-row p,.service p{grid-column:2}
-      .approach-arrow,.service-arrow{display:none}
-      .sector-grid{grid-template-columns:1fr;gap:0}
-      .sector:nth-last-child(-n+2){border-bottom:0}
-      .sector:last-child{border-bottom:1px solid var(--line-dark)}
-      .market-grid{grid-template-columns:1fr}
-      .market:nth-child(odd),.market:nth-child(even){padding-left:0;padding-right:0;border-right:0}
-    }
-    @media(max-width:580px){
-      .container,.hero-inner,.hero-bottom-inner{width:calc(100% - 32px)}
-      .header-inner{min-height:70px}
-      .brand{width:155px;height:52px}
-      .mobile-menu{top:70px}
-      .hero{padding-top:70px}
-      .hero-inner{min-height:auto;padding:65px 0 88px}
-      .hero-copy{padding-left:16px}
-      .hero-pill{font-size:.56rem;letter-spacing:.10em}
-      .hero-kicker{font-size:.61rem;margin-top:28px}
-      .hero h1{font-size:clamp(2.7rem,13vw,4.35rem);line-height:.90}
-      .hero-lede{font-size:.95rem;line-height:1.68}
-      .hero-actions{flex-direction:column;align-items:stretch}
-      .btn{width:100%}
-      .hero-card-visual{min-height:240px}
-      .hero-card-visual img{max-height:175px}
-      .hero-bottom{display:none}
-      .section{padding:92px 0}
-      .section-title{font-size:3.15rem}
-      .about-grid{grid-template-columns:1fr}
-      .stats-grid{grid-template-columns:1fr}
-      .stat,.stat:nth-child(2){border-right:0}
-      .stat{border-bottom:1px solid rgba(6,29,24,.12)}
-      .stat:last-child{border-bottom:0}
-      .collab-image img{height:270px}
-      .sector{grid-template-columns:1fr;gap:10px}
-      .form-card{padding:22px 18px}
-      .video-controls{right:10px;bottom:10px}
-      .video-btn{min-width:84px;font-size:.54rem}
-      .footer-bottom{flex-direction:column}
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 32px;
     }
 
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      *,*::before,*::after{transition:none!important;animation:none!important}
+    .button {
+      min-height: 47px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 21px;
+
+      border: 1px solid var(--gold);
+
+      font-size: 8px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+
+      transition: all 0.3s ease;
     }
+
+    .button-gold {
+      background: var(--gold);
+
+      color: var(--deep-green);
+    }
+
+    .button-gold:hover {
+      background: var(--gold-light);
+
+      transform: translateY(-2px);
+    }
+
+    .button-outline {
+      border-color: rgba(248, 245, 236, 0.42);
+    }
+
+    .button-outline:hover {
+      border-color: var(--gold);
+
+      color: var(--gold-light);
+    }
+
+    /* =========================================================
+       FRONT PAGE COMPANY LOGO
+    ========================================================= */
+
+    .hero-logo-area {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 450px;
+    }
+
+    .hero-company-logo {
+      width: min(100%, 480px);
+
+      max-height: 430px;
+
+      object-fit: contain;
+
+      filter:
+        drop-shadow(0 25px 50px rgba(0, 0, 0, 0.52));
+    }
+
+    /* =========================================================
+       VIDEO CONTROLS
+    ========================================================= */
+
+    .video-controls {
+      position: absolute;
+
+      z-index: 10;
+
+      right: 5vw;
+      bottom: 25px;
+
+      display: flex;
+
+      gap: 7px;
+    }
+
+    .video-controls button {
+      border: 1px solid rgba(201, 163, 90, 0.45);
+
+      background: rgba(1, 26, 21, 0.60);
+
+      color: var(--cream);
+
+      padding: 8px 12px;
+
+      font-size: 8px;
+
+      letter-spacing: 1.3px;
+
+      text-transform: uppercase;
+    }
+
+    .video-controls button:hover {
+      border-color: var(--gold);
+
+      color: var(--gold-light);
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+    ========================================================= */
+
+    section {
+      padding: 115px 5vw;
+    }
+
+    .container {
+      max-width: var(--max-width);
+
+      margin: auto;
+    }
+
+    .section-label {
+      color: var(--gold-light);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: 2.8px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 17px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: clamp(45px, 5vw, 69px);
+
+      font-weight: 500;
+
+      line-height: 0.98;
+
+      letter-spacing: -1px;
+    }
+
+    .section-title span {
+      color: var(--gold-light);
+
+      font-style: italic;
+    }
+
+    .body-text {
+      color: var(--white-muted);
+
+      font-size: 13px;
+
+      line-height: 1.95;
+    }
+
+    .gold-line {
+      width: 100%;
+
+      height: 1px;
+
+      background: var(--gold-line);
+
+      margin: 27px 0;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      background: var(--forest-green);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.65fr 1.35fr;
+
+      gap: 90px;
+    }
+
+    .about-number {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 150px;
+
+      line-height: 0.8;
+
+      color: rgba(201, 163, 90, 0.13);
+    }
+
+    .about-copy {
+      max-width: 760px;
+    }
+
+    .about-copy p + p {
+      margin-top: 20px;
+    }
+
+    /* =========================================================
+       APPROACH
+    ========================================================= */
+
+    .approach {
+      background: var(--ivory);
+
+      color: var(--deep-green);
+    }
+
+    .approach .section-label {
+      color: var(--gold-dark);
+    }
+
+    .approach-grid {
+      display: grid;
+
+      grid-template-columns: 0.7fr 1.3fr;
+
+      gap: 90px;
+    }
+
+    .approach-description {
+      color: rgba(1, 26, 21, 0.66);
+    }
+
+    .pillars-list {
+      border-top: 1px solid rgba(1, 26, 21, 0.22);
+    }
+
+    .pillar {
+      display: grid;
+
+      grid-template-columns: 50px 200px 1fr;
+
+      gap: 20px;
+
+      padding: 27px 0;
+
+      border-bottom: 1px solid rgba(1, 26, 21, 0.22);
+    }
+
+    .pillar-number {
+      color: var(--gold-dark);
+
+      font-size: 10px;
+    }
+
+    .pillar h3 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 29px;
+
+      font-weight: 600;
+    }
+
+    .pillar p {
+      color: rgba(1, 26, 21, 0.64);
+
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       SERVICES
+    ========================================================= */
+
+    .services {
+      background: var(--deep-green);
+    }
+
+    .services-heading {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: flex-end;
+
+      gap: 50px;
+
+      margin-bottom: 48px;
+    }
+
+    .services-intro {
+      max-width: 470px;
+    }
+
+    .services-list {
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .service {
+      display: grid;
+
+      grid-template-columns: 55px 300px 1fr;
+
+      gap: 20px;
+
+      padding: 30px 0;
+
+      border-bottom: 1px solid var(--gold-line);
+
+      transition: all 0.3s ease;
+    }
+
+    .service:hover {
+      padding-left: 9px;
+    }
+
+    .service-number {
+      color: var(--gold-light);
+
+      font-size: 10px;
+
+      letter-spacing: 2px;
+    }
+
+    .service h3 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 29px;
+
+      font-weight: 500;
+
+      line-height: 1.1;
+    }
+
+    .service p {
+      color: var(--white-muted);
+
+      font-size: 12px;
+
+      line-height: 1.8;
+    }
+
+    /* =========================================================
+       SECTORS
+    ========================================================= */
+
+    .sectors {
+      background: var(--forest-green);
+    }
+
+    .sector-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      margin-top: 50px;
+
+      border-top: 1px solid var(--gold-line);
+
+      border-left: 1px solid var(--gold-line);
+    }
+
+    .sector {
+      min-height: 245px;
+
+      padding: 32px;
+
+      border-right: 1px solid var(--gold-line);
+
+      border-bottom: 1px solid var(--gold-line);
+
+      transition: all 0.3s ease;
+    }
+
+    .sector:hover {
+      background: rgba(201, 163, 90, 0.04);
+    }
+
+    .sector-number {
+      color: var(--gold-light);
+
+      font-size: 10px;
+    }
+
+    .sector h3 {
+      margin-top: 60px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 37px;
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .sector p {
+      margin-top: 12px;
+
+      color: var(--white-muted);
+
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       GLOBAL MARKETS
+    ========================================================= */
+
+    .markets {
+      background: var(--ivory);
+
+      color: var(--deep-green);
+    }
+
+    .markets .section-label {
+      color: var(--gold-dark);
+    }
+
+    .markets-grid {
+      display: grid;
+
+      grid-template-columns: 0.75fr 1.25fr;
+
+      gap: 90px;
+    }
+
+    .markets-description {
+      color: rgba(1, 26, 21, 0.65);
+    }
+
+    .market-list {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      border-top: 1px solid rgba(1, 26, 21, 0.2);
+    }
+
+    .market {
+      padding: 30px 0;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 43px;
+
+      border-bottom: 1px solid rgba(1, 26, 21, 0.2);
+    }
+
+    .market:nth-child(odd) {
+      padding-right: 25px;
+
+      border-right: 1px solid rgba(1, 26, 21, 0.2);
+    }
+
+    .market:nth-child(even) {
+      padding-left: 25px;
+    }
+
+    /* =========================================================
+       REAL ESTATE
+    ========================================================= */
+
+    .real-estate {
+      background:
+        linear-gradient(
+          rgba(1, 26, 21, 0.90),
+          rgba(1, 26, 21, 0.96)
+        ),
+        url("WhatsApp Image 2026-09-12 at 18.39.51.jpeg")
+        center / cover no-repeat;
+    }
+
+    .real-estate-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .real-estate-copy {
+      max-width: 650px;
+    }
+
+    .real-estate-copy p {
+      margin-top: 25px;
+    }
+
+    .real-estate-box {
+      min-height: 360px;
+
+      padding: 42px;
+
+      border: 1px solid var(--gold-line);
+
+      background: rgba(1, 26, 21, 0.38);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+    }
+
+    .real-estate-box small {
+      color: var(--gold-light);
+
+      font-size: 9px;
+
+      letter-spacing: 2px;
+    }
+
+    .real-estate-box h3 {
+      margin-top: 15px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 48px;
+
+      font-weight: 500;
+
+      line-height: 0.95;
+    }
+
+    /* =========================================================
+       PROJECTS / MERAKI
+    ========================================================= */
+
+    .projects {
+      background: var(--forest-green);
+    }
+
+    .project-card {
+      margin-top: 45px;
+
+      padding: 35px;
+
+      border: 1px solid var(--gold-line);
+
+      background: rgba(1, 26, 21, 0.45);
+    }
+
+    /*
+       MERAKI IMAGE IS INTENTIONALLY
+       MUCH LARGER THAN THE HEADER LOGO
+    */
+
+    .meraki-logo {
+      width: min(100%, 780px);
+
+      max-height: 540px;
+
+      object-fit: contain;
+
+      margin: 0 auto 40px;
+
+      filter:
+        drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
+    }
+
+    .project-details {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 35px;
+
+      border-top: 1px solid var(--gold-line);
+
+      padding-top: 25px;
+    }
+
+    .project-detail small {
+      display: block;
+
+      color: var(--gold-light);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 7px;
+
+      text-transform: uppercase;
+    }
+
+    .project-detail p {
+      color: var(--white-muted);
+
+      font-size: 12px;
+    }
+
+    .project-video-container {
+      margin-top: 35px;
+
+      overflow: hidden;
+
+      border: 1px solid var(--gold-line);
+
+      background: #000;
+    }
+
+    .project-video {
+      width: 100%;
+
+      max-height: 680px;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
+    /* =========================================================
+       WHY FOUR PILLARS
+    ========================================================= */
+
+    .why {
+      background: var(--ivory);
+
+      color: var(--deep-green);
+    }
+
+    .why .section-label {
+      color: var(--gold-dark);
+    }
+
+    .why-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      margin-top: 50px;
+
+      border-top: 1px solid rgba(1, 26, 21, 0.22);
+    }
+
+    .why-item {
+      min-height: 245px;
+
+      padding: 30px 22px;
+
+      border-right: 1px solid rgba(1, 26, 21, 0.22);
+
+      border-bottom: 1px solid rgba(1, 26, 21, 0.22);
+    }
+
+    .why-item:first-child {
+      border-left: 1px solid rgba(1, 26, 21, 0.22);
+    }
+
+    .why-item small {
+      color: var(--gold-dark);
+
+      font-size: 10px;
+    }
+
+    .why-item h3 {
+      margin-top: 60px;
+
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 34px;
+
+      font-weight: 600;
+    }
+
+    .why-item p {
+      margin-top: 8px;
+
+      color: rgba(1, 26, 21, 0.62);
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       BUILDING BRIDGES
+    ========================================================= */
+
+    .bridges {
+      background: var(--deep-green);
+
+      text-align: center;
+    }
+
+    .bridges-container {
+      max-width: 930px;
+    }
+
+    .bridges-copy {
+      max-width: 850px;
+
+      margin: 30px auto 0;
+
+      color: var(--white-muted);
+
+      font-size: 13px;
+
+      line-height: 2;
+    }
+
+    .bridge-line {
+      width: 110px;
+
+      height: 1px;
+
+      background: var(--gold);
+
+      margin: 38px auto;
+    }
+
+    .bridge-tagline {
+      font-family: "Cormorant Garamond", serif;
+
+      color: var(--gold-light);
+
+      font-size: 30px;
+
+      font-style: italic;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      background: var(--forest-green);
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 90px;
+    }
+
+    .contact-details {
+      margin-top: 35px;
+    }
+
+    .contact-detail {
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .contact-detail small {
+      display: block;
+
+      color: var(--gold-light);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 5px;
+
+      text-transform: uppercase;
+    }
+
+    .contact-detail a,
+    .contact-detail span {
+      font-size: 13px;
+    }
+
+    .contact-detail a:hover {
+      color: var(--gold-light);
+    }
+
+    /* =========================================================
+       FORM
+    ========================================================= */
+
+    .contact-form {
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .form-row {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 20px;
+    }
+
+    .field {
+      padding-top: 22px;
+    }
+
+    .field label {
+      display: block;
+
+      color: var(--gold-light);
+
+      font-size: 8px;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 8px;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+
+      border: 0;
+
+      border-bottom: 1px solid rgba(248, 245, 236, 0.25);
+
+      background: transparent;
+
+      color: var(--cream);
+
+      outline: none;
+
+      padding: 10px 0;
+
+      border-radius: 0;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--gold);
+    }
+
+    .field select option {
+      background: var(--deep-green);
+
+      color: var(--cream);
+    }
+
+    .field textarea {
+      min-height: 110px;
+
+      resize: vertical;
+    }
+
+    .form-submit {
+      margin-top: 30px;
+    }
+
+    .form-message {
+      display: none;
+
+      margin-top: 14px;
+
+      color: var(--gold-light);
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      background: #010F0C;
+
+      padding: 65px 5vw 25px;
+
+      border-top: 1px solid var(--gold-line);
+    }
+
+    .footer-grid {
+      max-width: var(--max-width);
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+
+      gap: 65px;
+    }
+
+    .footer-logo {
+      width: 92px;
+
+      height: 60px;
+
+      object-fit: contain;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-brand h3 {
+      font-family: "Cormorant Garamond", serif;
+
+      font-size: 28px;
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .footer-brand p {
+      margin-top: 12px;
+
+      color: rgba(248, 245, 236, 0.48);
+
+      font-size: 11px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold-light);
+
+      font-size: 8px;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+
+      color: rgba(248, 245, 236, 0.58);
+
+      font-size: 10px;
+
+      margin: 8px 0;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      max-width: var(--max-width);
+
+      margin: 55px auto 0;
+
+      padding-top: 18px;
+
+      border-top: 1px solid rgba(201, 163, 90, 0.17);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: rgba(248, 245, 236, 0.35);
+
+      font-size: 8px;
+    }
+
+    /* =========================================================
+       WHATSAPP
+    ========================================================= */
+
+    .whatsapp-button {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 54px;
+      height: 54px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #1B9B5D;
+
+      color: white;
+
+      z-index: 900;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.40);
+
+      transition: transform 0.25s ease;
+    }
+
+    .whatsapp-button:hover {
+      transform: translateY(-4px);
+    }
+
+    .whatsapp-button svg {
+      width: 26px;
+      height: 26px;
+
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       AI CHAT BUTTON
+    ========================================================= */
+
+    .chat-toggle {
+      position: fixed;
+
+      right: 22px;
+      bottom: 88px;
+
+      width: 54px;
+      height: 54px;
+
+      border-radius: 50%;
+
+      border: 1px solid var(--gold);
+
+      background: var(--forest-green);
+
+      color: var(--gold-light);
+
+      z-index: 901;
+
+      font-size: 19px;
+
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+
+      transition: all 0.25s ease;
+    }
+
+    .chat-toggle:hover {
+      transform: translateY(-4px);
+
+      background: var(--bottle-green);
+    }
+
+    /* =========================================================
+       AI CHAT WINDOW
+    ========================================================= */
+
+    .chat-window {
+      position: fixed;
+
+      right: 22px;
+      bottom: 155px;
+
+      width: min(390px, calc(100vw - 30px));
+
+      height: 555px;
+
+      background: var(--ivory);
+
+      color: var(--deep-green);
+
+      border: 1px solid var(--gold);
+
+      z-index: 1200;
+
+      display: none;
+
+      flex-direction: column;
+
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    .chat-window.open {
+      display: flex;
+    }
+
+    .chat-header {
+      padding: 17px;
+
+      background: var(--forest-green);
+
+      border-bottom: 1px solid var(--gold);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    .chat-title {
+      font-family: "Cormorant Garamond", serif;
+
+      color: var(--cream);
+
+      font-size: 23px;
+    }
+
+    .chat-subtitle {
+      display: block;
+
+      color: var(--gold-light);
+
+      font-size: 7px;
+
+      letter-spacing: 2px;
+    }
+
+    .chat-close {
+      border: 0;
+
+      background: transparent;
+
+      color: var(--cream);
+
+      font-size: 23px;
+    }
+
+    .chat-messages {
+      flex: 1;
+
+      overflow-y: auto;
+
+      padding: 17px;
+    }
+
+    .chat-message {
+      max-width: 88%;
+
+      padding: 10px 12px;
+
+      margin-bottom: 12px;
+
+      font-size: 11px;
+
+      line-height: 1.65;
+    }
+
+    .chat-message.bot {
+      margin-right: auto;
+
+      background: #E9E3D5;
+    }
+
+    .chat-message.user {
+      margin-left: auto;
+
+      background: var(--forest-green);
+
+      color: white;
+    }
+
+    .typing-indicator {
+      display: none;
+
+      padding: 0 17px 8px;
+
+      color: #777;
+
+      font-size: 10px;
+    }
+
+    .typing-indicator.show {
+      display: block;
+    }
+
+    .quick-questions {
+      padding: 8px 13px;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 6px;
+
+      border-top: 1px solid rgba(1, 26, 21, 0.10);
+    }
+
+    .quick-questions button {
+      padding: 6px 8px;
+
+      background: transparent;
+
+      border: 1px solid rgba(1, 26, 21, 0.25);
+
+      color: var(--deep-green);
+
+      font-size: 8px;
+    }
+
+    .quick-questions button:hover {
+      border-color: var(--gold-dark);
+
+      color: var(--gold-dark);
+    }
+
+    .chat-input-area {
+      display: flex;
+
+      border-top: 1px solid rgba(1, 26, 21, 0.20);
+    }
+
+    .chat-input-area input {
+      flex: 1;
+
+      border: 0;
+
+      outline: 0;
+
+      padding: 13px;
+
+      font-size: 11px;
+
+      background: white;
+    }
+
+    .chat-input-area button {
+      width: 67px;
+
+      border: 0;
+
+      background: var(--gold);
+
+      color: var(--deep-green);
+
+      font-size: 9px;
+
+      font-weight: 700;
+    }
+
+    .chat-input-area button:hover {
+      background: var(--gold-light);
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform: translateY(24px);
+
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       TABLET
+    ========================================================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-logo-area {
+        display: none;
+      }
+
+      .about-grid,
+      .approach-grid,
+      .markets-grid,
+      .real-estate-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 720px) {
+
+      .header {
+        padding: 10px 20px;
+      }
+
+      .header-logo {
+        width: 82px;
+        height: 52px;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 15px;
+        right: 15px;
+
+        padding: 22px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+
+        background: rgba(1, 26, 21, 0.98);
+
+        border: 1px solid var(--gold-line);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero-content {
+        padding: 135px 22px 85px;
+      }
+
+      .hero h1 {
+        font-size: clamp(44px, 12vw, 62px);
+
+        letter-spacing: -1px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+
+        line-height: 1.8;
+
+        max-width: 100%;
+      }
+
+      section {
+        padding: 85px 22px;
+      }
+
+      .section-title {
+        font-size: 49px;
+      }
+
+      .about-number {
+        font-size: 95px;
+      }
+
+      .pillar {
+        grid-template-columns: 42px 1fr;
+      }
+
+      .pillar p {
+        grid-column: 2;
+      }
+
+      .service {
+        grid-template-columns: 45px 1fr;
+      }
+
+      .service p {
+        grid-column: 2;
+      }
+
+      .service h3,
+      .pillar h3 {
+        font-size: 26px;
+      }
+
+      .services-heading {
+        display: block;
+      }
+
+      .services-intro {
+        margin-top: 20px;
+      }
+
+      .sector-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sector {
+        min-height: 215px;
+      }
+
+      .market-list {
+        grid-template-columns: 1fr;
+      }
+
+      .market,
+      .market:nth-child(odd),
+      .market:nth-child(even) {
+        padding: 23px 0;
+
+        border-right: 0;
+      }
+
+      .market {
+        font-size: 38px;
+      }
+
+      .real-estate-box {
+        min-height: 280px;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .meraki-logo {
+        max-height: 430px;
+      }
+
+      .project-details {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-item,
+      .why-item:first-child {
+        border-left: 1px solid rgba(1, 26, 21, 0.22);
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .video-controls {
+        left: 22px;
+
+        right: auto;
+
+        bottom: 18px;
+      }
+
+      .chat-toggle {
+        right: 18px;
+
+        bottom: 86px;
+      }
+
+      .whatsapp-button {
+        right: 18px;
+
+        bottom: 20px;
+      }
+
+      .chat-window {
+        right: 15px;
+
+        bottom: 150px;
+
+        width: calc(100vw - 30px);
+
+        height: 520px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .reveal {
+        opacity: 1;
+
+        transform: none;
+      }
+
+      * {
+        transition: none !important;
+      }
+
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- Cinematic background -->
-  <div class="site-bg" aria-hidden="true">
-    <video id="bgVideo" autoplay muted loop playsinline preload="auto">
-      <source src="https://res.cloudinary.com/lmgemsl4/video/upload/v1789364045/compressed-Meraki_Walkthrough.mp4" type="video/mp4">
-    </video>
-  </div>
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
 
-  <!-- Header -->
   <header class="header" id="header">
-    <div class="container header-inner">
 
-    <a class="brand" href="#top" aria-label="Four Pillars Business Advisory home">
-  <img src="fourpillars.jpeg" alt="Four Pillars Business Advisory">
-</a>
+    <nav class="nav">
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#real-estate">Real Estate</a>
-        <a href="#projects">Projects</a>
-      </nav>
+      <a href="#home" aria-label="Four Pillars Home">
 
-      <a class="header-cta" href="#contact">Schedule a Consultation ↗</a>
+        <img
+          src="fourpillars.jpeg"
+          alt="Four Pillars Business Services Logo"
+          class="header-logo"
+        />
 
-      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
-        Menu
+      </a>
+
+
+      <button
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-label="Open navigation"
+      >
+        ☰
       </button>
 
-    </div>
+
+      <div class="nav-links" id="navLinks">
+
+        <a href="#about">
+          ABOUT
+        </a>
+
+        <a href="#services">
+          SERVICES
+        </a>
+
+        <a href="#real-estate">
+          REAL ESTATE
+        </a>
+
+        <a href="#projects">
+          PROJECTS
+        </a>
+
+        <a
+          href="#contact"
+          class="nav-consultation"
+        >
+          SCHEDULE A CONSULTATION
+        </a>
+
+      </div>
+
+    </nav>
+
   </header>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#approach">Our Approach</a>
-      <a href="#services">Services</a>
-      <a href="#real-estate">Real Estate</a>
-      <a href="#projects">Projects</a>
-      <a href="#sectors">Sectors</a>
-      <a href="#markets">Markets</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
 
-  <main id="top">
+  <!-- =======================================================
+       HERO / FRONT PAGE
+  ======================================================== -->
 
-    <!-- HERO -->
-    <section class="hero">
+  <main>
 
-      <div class="hero-inner">
+    <section
+      class="hero"
+      id="home"
+    >
 
-        <div class="hero-copy">
+      <video
+        class="hero-video"
+        id="heroVideo"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
 
-          <div class="hero-pill">
-            <i></i>
-            Dubai · GCC · South Asia · Africa · Australia
+        <source
+          src="https://res.cloudinary.com/lmgemsl4/video/upload/v1789364045/compressed-Meraki_Walkthrough.mp4"
+          type="video/mp4"
+        />
+
+      </video>
+
+
+      <div class="hero-overlay"></div>
+
+
+      <div class="hero-content">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="hero-left reveal">
+
+          <div class="eyebrow">
+            FOUR PILLARS BUSINESS SERVICES
           </div>
 
-          <div class="hero-kicker">Four Pillars Business Advisory</div>
 
-          <h1 class="display">
-            Connecting Markets.<br>
-            <span class="gold">Creating Opportunities.</span><br>
+          <h1>
+
+            Connecting Markets.<br />
+
+            Creating
+            <span class="gold">
+              Opportunities.
+            </span><br />
+
             Scaling Businesses.
+
           </h1>
 
-          <p class="hero-lede">
-            Four Pillars Business Advisory is a Dubai-based cross-border
-            consulting and business development firm helping companies,
-            investors, institutions and entrepreneurs identify opportunities,
-            enter new markets and build sustainable international growth.
+
+          <!-- MEDIUM EASY-TO-READ TEXT -->
+
+          <p class="hero-description">
+
+            Four Pillars Business Services is a Dubai-based
+            cross-border consulting and business development firm
+            helping companies, investors, institutions and
+            entrepreneurs identify opportunities, enter new markets
+            and build sustainable international growth.
+
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">
-              Start a Conversation ↗
+
+          <div class="hero-buttons">
+
+            <a
+              href="#contact"
+              class="button button-gold"
+            >
+              Schedule a Consultation
             </a>
-            <a class="btn btn-ghost" href="#approach">
-              Our Approach ↓
+
+
+            <a
+              href="#services"
+              class="button button-outline"
+            >
+              Explore Services
             </a>
+
           </div>
 
         </div>
 
-        <aside class="hero-card">
 
-          <div class="hero-card-top">
-            <span>Dubai Headquarters</span>
-            <span>◫</span>
-          </div>
+        <!-- RIGHT SIDE
+             PRIMARY FOUR PILLARS LOGO -->
 
-          <div class="hero-card-visual">
-            <img src="fourpillars.jpeg" alt="Four Pillars Business Advisory logo">
-          </div>
+        <div class="hero-logo-area reveal">
 
-          <div class="hero-card-bottom">
-            <span>Headquartered in Dubai</span>
-            <strong>GCC &amp; Global</strong>
-          </div>
+          <img
+            src="fourpillars.jpeg"
+            alt="Four Pillars Business Services"
+            class="hero-company-logo"
+          />
 
-        </aside>
+        </div>
 
       </div>
 
-      <div class="hero-bottom">
-        <div class="hero-bottom-inner">
-          <span>Strategy · Network · Execution</span>
-          <a href="#services">Explore What Is Possible ↓</a>
-        </div>
+
+      <!-- VIDEO CONTROLS -->
+
+      <div class="video-controls">
+
+        <button id="soundButton">
+          Sound Off
+        </button>
+
+        <button id="playButton">
+          Pause
+        </button>
+
       </div>
 
     </section>
 
-    <!-- STATS -->
-    <section class="stats">
-      <div class="container stats-grid">
-        <div class="stat">
-          <b>01</b>
-          <span>Dubai Headquarters</span>
-        </div>
-        <div class="stat">
-          <b>04</b>
-          <span>Core Markets</span>
-        </div>
-        <div class="stat">
-          <b>06</b>
-          <span>Advisory Capabilities</span>
-        </div>
-        <div class="stat">
-          <b>∞</b>
-          <span>Cross-Border Possibility</span>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section light" id="about">
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section
+      class="about"
+      id="about"
+    >
+
       <div class="container">
-
-        <div class="split">
-
-          <div>
-            <div class="eyebrow">About Four Pillars</div>
-            <h2 class="section-title">
-              A bridge between<br>
-              <span class="gold">ambition and access.</span>
-            </h2>
-          </div>
-
-          <div>
-            <div class="copy">
-              <p>
-                Four Pillars Business Advisory works at the intersection of
-                strategy, relationships and international market access.
-                We help organisations understand where opportunity exists,
-                who matters in that market and how to move from an idea to a
-                practical commercial path.
-              </p>
-              <br>
-              <p>
-                From Dubai, our perspective connects the GCC with South Asia,
-                Africa and Australia — bringing together businesses, investors,
-                institutions and strategic partners around high-value
-                opportunities.
-              </p>
-            </div>
-          </div>
-
-        </div>
 
         <div class="about-grid">
 
-          <article class="about-item">
-            <h3>Clarity before movement.</h3>
-            <p>
-              We define the commercial objective and market logic before
-              recommending a move.
-            </p>
-          </article>
 
-          <article class="about-item">
-            <h3>Relationships with purpose.</h3>
-            <p>
-              We focus on relevant connections rather than volume:
-              institutions, investors, operators and strategic partners.
-            </p>
-          </article>
+          <div class="reveal">
 
-          <article class="about-item">
-            <h3>Local context, global view.</h3>
-            <p>
-              International expansion becomes stronger when global ambition
-              is translated into local market realities.
-            </p>
-          </article>
+            <div class="section-label">
+              01 — About
+            </div>
 
-          <article class="about-item">
-            <h3>Execution that moves.</h3>
-            <p>
-              Strategy becomes valuable when it creates a clear next step,
-              a responsible owner and a measurable outcome.
-            </p>
-          </article>
+            <div class="about-number">
+              01
+            </div>
 
-        </div>
-
-      </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section class="section dark" id="approach">
-      <div class="container">
-
-        <div class="approach-layout">
-
-          <div class="approach-intro">
-            <div class="eyebrow">Our Approach</div>
-            <h2 class="section-title">
-              Strategy.<br>
-              Network.<br>
-              Execution.
-            </h2>
-            <p>
-              We combine market intelligence, strategic relationships and
-              disciplined execution to help businesses move into high-value
-              international opportunities.
-            </p>
           </div>
 
-          <div class="approach-list">
 
-            <article class="approach-row">
-              <span class="approach-no">01</span>
-              <h3>Targeted Ambition</h3>
-              <p>
-                Define the commercial objective, market opportunity and
-                strategic direction before entering a new market.
-              </p>
-              <span class="approach-arrow">→</span>
-            </article>
+          <div class="about-copy reveal">
 
-            <article class="approach-row">
-              <span class="approach-no">02</span>
-              <h3>Market Intelligence</h3>
-              <p>
-                Translate market conditions, customer dynamics and local
-                opportunity into actionable decisions.
-              </p>
-              <span class="approach-arrow">→</span>
-            </article>
+            <h2 class="section-title">
 
-            <article class="approach-row">
-              <span class="approach-no">03</span>
-              <h3>Trusted Network</h3>
-              <p>
-                Connect businesses with relevant institutions, investors,
-                operators and strategic partners.
-              </p>
-              <span class="approach-arrow">→</span>
-            </article>
+              Built for
+              <span>cross-border</span>
+              growth.
 
-            <article class="approach-row">
-              <span class="approach-no">04</span>
-              <h3>Flawless Execution</h3>
-              <p>
-                Coordinate market entry, partnerships and expansion with a
-                focus on practical commercial outcomes.
-              </p>
-              <span class="approach-arrow">→</span>
-            </article>
+            </h2>
+
+
+            <div class="gold-line"></div>
+
+
+            <p class="body-text">
+
+              Four Pillars Business Services is a Dubai-based
+              cross-border consulting and business development firm
+              helping companies, investors, institutions and
+              entrepreneurs identify opportunities, enter new markets
+              and build sustainable international growth.
+
+            </p>
+
+
+            <p class="body-text">
+
+              We operate at the intersection of strategy, market
+              access, trusted relationships and execution, connecting
+              businesses with the right people, partners, investors
+              and opportunities across South Asia, Africa, the GCC
+              and Australia.
+
+            </p>
 
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- SERVICES -->
-    <section class="section light" id="services">
+
+    <!-- =====================================================
+         APPROACH
+    ====================================================== -->
+
+    <section class="approach">
+
       <div class="container">
 
-        <div class="split">
-          <div>
-            <div class="eyebrow">Advisory Services</div>
+        <div class="approach-grid">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              Our Approach
+            </div>
+
+
             <h2 class="section-title">
-              Advisory<br>
-              <span class="gold">with purpose.</span>
+
+              The four
+              <span>pillars.</span>
+
             </h2>
+
+
+            <div class="gold-line"></div>
+
+
+            <p class="body-text approach-description">
+
+              Expanding internationally requires more than a good
+              product or service. It requires the right strategy,
+              the right market and, most importantly, the right network.
+
+            </p>
+
           </div>
 
-          <div class="copy">
-            <p>
-              Six complementary capabilities designed to support market entry,
-              strategic growth, business development, partnerships and
-              opportunity-led expansion.
-            </p>
-          </div>
-        </div>
 
-        <div class="service-list">
+          <div class="pillars-list reveal">
 
-          <article class="service">
-            <span class="service-no">01</span>
-            <h3>Strategic Consulting</h3>
-            <p>
-              Strategic direction, market positioning and commercial
-              decision-making for businesses preparing for their next phase.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
 
-          <article class="service">
-            <span class="service-no">02</span>
-            <h3>Cross-Border Market Entry</h3>
-            <p>
-              Market assessment, entry planning and local positioning across
-              selected international markets.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
+            <div class="pillar">
 
-          <article class="service">
-            <span class="service-no">03</span>
-            <h3>Strategic Partnerships</h3>
-            <p>
-              Identify and develop relevant institutional, commercial and
-              strategic relationships.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
+              <div class="pillar-number">
+                01
+              </div>
 
-          <article class="service">
-            <span class="service-no">04</span>
-            <h3>Business Expansion &amp; Scaling</h3>
-            <p>
-              Support organisations entering new regions and scaling existing
-              operations with greater confidence.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
+              <h3>
+                Strategy
+              </h3>
 
-          <article class="service">
-            <span class="service-no">05</span>
-            <h3>Opportunity &amp; Investment Advisory</h3>
-            <p>
-              Evaluate relevant opportunities, connect stakeholders and support
-              commercially aligned conversations.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
-
-          <article class="service">
-            <span class="service-no">06</span>
-            <h3>Network &amp; Market Access</h3>
-            <p>
-              Practical access to relevant markets, decision-makers, operators,
-              investors and strategic partners.
-            </p>
-            <span class="service-arrow">→</span>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- REAL ESTATE -->
-    <section class="section dark realestate" id="real-estate">
-      <div class="container">
-
-        <div class="realestate-grid">
-
-          <div>
-            <div class="eyebrow">Real Estate</div>
-            <h2 class="section-title">
-              From opportunity<br>
-              <span class="gold">to execution.</span>
-            </h2>
-          </div>
-
-          <div>
-            <p>
-              Four Pillars Business Advisory supports developers, investors,
-              agencies and strategic partners looking to identify new markets,
-              strengthen relationships and create cross-border commercial
-              opportunities across real estate.
-            </p>
-
-            <div class="project-rail">
-
-              <article class="project">
-                <small>01 · Advisory</small>
-                <h3>Market Entry</h3>
-                <p>
-                  Position projects and propositions for relevant
-                  international markets.
-                </p>
-              </article>
-
-              <article class="project">
-                <small>02 · Partnerships</small>
-                <h3>Capital &amp; Network</h3>
-                <p>
-                  Build relationships with investors, operators and strategic
-                  stakeholders.
-                </p>
-              </article>
-
-              <article class="project">
-                <small>03 · Growth</small>
-                <h3>Portfolio Expansion</h3>
-                <p>
-                  Explore new markets, commercial channels and expansion paths.
-                </p>
-              </article>
+              <p>
+                Understanding where you want to go and creating
+                the right roadmap.
+              </p>
 
             </div>
+
+
+            <div class="pillar">
+
+              <div class="pillar-number">
+                02
+              </div>
+
+              <h3>
+                Market Access
+              </h3>
+
+              <p>
+                Identifying the right markets and pathways
+                to enter them.
+              </p>
+
+            </div>
+
+
+            <div class="pillar">
+
+              <div class="pillar-number">
+                03
+              </div>
+
+              <h3>
+                Network
+              </h3>
+
+              <p>
+                Connecting you with the right people, partners
+                and decision-makers.
+              </p>
+
+            </div>
+
+
+            <div class="pillar">
+
+              <div class="pillar-number">
+                04
+              </div>
+
+              <h3>
+                Execution
+              </h3>
+
+              <p>
+                Turning strategy and opportunities into tangible
+                commercial outcomes.
+              </p>
+
+            </div>
+
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- PROJECTS -->
-    <section class="section light" id="projects">
+
+    <!-- =====================================================
+         SERVICES
+    ====================================================== -->
+
+    <section
+      class="services"
+      id="services"
+    >
+
       <div class="container">
 
-        <div class="split">
-          <div>
-            <div class="eyebrow">Projects &amp; Opportunities</div>
+
+        <div class="services-heading">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              02 — Services
+            </div>
+
             <h2 class="section-title">
-              Selected<br>
-              <span class="gold">possibilities.</span>
+
+              What we
+              <span>do.</span>
+
             </h2>
+
           </div>
 
-          <div class="copy">
-            <p>
-              Our project work is built around the same principle as our
-              advisory model: understand the opportunity, align the right
-              stakeholders and create a practical route to progress.
-            </p>
-          </div>
+
+          <p class="body-text services-intro reveal">
+
+            From market entry and business structuring to
+            partnerships, distribution, investment opportunities
+            and strategic introductions, we help businesses move
+            from opportunity to execution.
+
+          </p>
+
         </div>
 
-        <div class="about-grid">
 
-          <article class="about-item">
-            <h3>Development Opportunities</h3>
-            <p>
-              Real estate and development propositions requiring strategic
-              market positioning and international access.
-            </p>
-          </article>
+        <div class="services-list reveal">
 
-          <article class="about-item">
-            <h3>Business Expansion</h3>
-            <p>
-              Companies evaluating new regions, strategic partnerships or
-              commercial scale-up.
-            </p>
-          </article>
 
-          <article class="about-item">
-            <h3>Institutional Connections</h3>
-            <p>
-              Opportunities where trusted relationships and stakeholder
-              alignment are central to progress.
-            </p>
-          </article>
+          <div class="service">
 
-          <article class="about-item">
-            <h3>Investment Conversations</h3>
+            <div class="service-number">
+              01
+            </div>
+
+            <h3>
+              Strategic Consulting
+            </h3>
+
             <p>
-              Opportunity-led introductions focused on commercial relevance,
-              strategic fit and informed dialogue.
+
+              We provide commercially focused advice to help
+              businesses identify growth opportunities, refine
+              their strategy and develop a clear pathway for expansion.
+
             </p>
-          </article>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-number">
+              02
+            </div>
+
+            <h3>
+              Cross-Border Market Entry
+            </h3>
+
+            <p>
+
+              We help businesses assess and enter new markets
+              across the GCC, South Asia, Africa and Australia,
+              providing local market insight, connections and
+              strategic direction.
+
+            </p>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-number">
+              03
+            </div>
+
+            <h3>
+              Strategic Partnerships
+            </h3>
+
+            <p>
+
+              We connect businesses with carefully selected
+              partners, operators, developers, institutions,
+              investors and decision-makers to create mutually
+              beneficial opportunities.
+
+            </p>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-number">
+              04
+            </div>
+
+            <h3>
+              Business Expansion & Scaling
+            </h3>
+
+            <p>
+
+              Whether entering a new country, launching a new
+              division or scaling an existing business, we help
+              develop the relationships, structure and strategy
+              required for sustainable growth.
+
+            </p>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-number">
+              05
+            </div>
+
+            <h3>
+              Opportunity & Investment Advisory
+            </h3>
+
+            <p>
+
+              We identify and facilitate commercially viable
+              opportunities across our sectors and markets,
+              connecting the right capital, businesses and projects.
+
+            </p>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-number">
+              06
+            </div>
+
+            <h3>
+              Network & Market Access
+            </h3>
+
+            <p>
+
+              Our strength lies in our network. We open doors
+              to relationships and opportunities that can help
+              businesses establish credibility, accelerate market
+              entry and build a meaningful international presence.
+
+            </p>
+
+          </div>
+
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- COLLABORATION -->
-    <section class="section dark">
+
+    <!-- =====================================================
+         SECTORS
+    ====================================================== -->
+
+    <section class="sectors">
+
       <div class="container">
 
-        <div class="collab-grid">
 
-          <div class="collab-image">
-            <img
-              src="WhatsApp Image 2026-09-12 at 18.39.51.jpeg"
-              alt="Meraki and Four Pillars collaboration"
+        <div class="reveal">
+
+          <div class="section-label">
+            03 — Sectors
+          </div>
+
+          <h2 class="section-title">
+
+            Where we
+            <span>operate.</span>
+
+          </h2>
+
+        </div>
+
+
+        <div class="sector-grid reveal">
+
+
+          <article class="sector">
+
+            <div class="sector-number">
+              01
+            </div>
+
+            <h3>
+              Education
+            </h3>
+
+            <p>
+
+              Connecting education providers, institutions,
+              investors and strategic partners across
+              international markets.
+
+            </p>
+
+          </article>
+
+
+          <article class="sector">
+
+            <div class="sector-number">
+              02
+            </div>
+
+            <h3>
+              Real Estate
+            </h3>
+
+            <p>
+
+              Supporting developers, investors, agencies and
+              businesses with market expansion, strategic
+              partnerships and cross-border opportunities.
+
+            </p>
+
+          </article>
+
+
+          <article class="sector">
+
+            <div class="sector-number">
+              03
+            </div>
+
+            <h3>
+              Hospitality
+            </h3>
+
+            <p>
+
+              Helping hospitality brands and operators identify
+              new markets, strategic partners and opportunities
+              for international growth.
+
+            </p>
+
+          </article>
+
+
+          <article class="sector">
+
+            <div class="sector-number">
+              04
+            </div>
+
+            <h3>
+              Food & Consumer Products
+            </h3>
+
+            <p>
+
+              Supporting brands seeking distribution, market
+              entry, strategic partnerships and expansion across
+              high-growth international markets.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MARKETS
+    ====================================================== -->
+
+    <section class="markets">
+
+      <div class="container">
+
+        <div class="markets-grid">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              04 — Global Footprint
+            </div>
+
+            <h2 class="section-title">
+
+              Across
+              <span>borders.</span>
+
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p class="body-text markets-description">
+
+              From our base in Dubai, we work across
+              strategically important markets including
+              the GCC, South Asia, Africa and Australia.
+
+            </p>
+
+          </div>
+
+
+          <div class="market-list reveal">
+
+            <div class="market">
+              GCC
+            </div>
+
+            <div class="market">
+              South Asia
+            </div>
+
+            <div class="market">
+              Africa
+            </div>
+
+            <div class="market">
+              Australia
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REAL ESTATE
+    ====================================================== -->
+
+    <section
+      class="real-estate"
+      id="real-estate"
+    >
+
+      <div class="container">
+
+
+        <div class="real-estate-grid">
+
+
+          <div class="real-estate-copy reveal">
+
+            <div class="section-label">
+              Real Estate
+            </div>
+
+
+            <h2 class="section-title">
+
+              Opportunity meets
+              <span>market access.</span>
+
+            </h2>
+
+
+            <p class="body-text">
+
+              Supporting developers, investors, agencies and
+              businesses with market expansion, strategic
+              partnerships and cross-border opportunities.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+              <a
+                href="#contact"
+                class="button button-gold"
+              >
+                Discuss a Real Estate Opportunity
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="real-estate-box reveal">
+
+            <small>
+              FOUR PILLARS
+            </small>
+
+            <h3>
+
+              Strategy.<br />
+              Network.<br />
+              Opportunity.
+
+            </h3>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROJECTS / MERAKI
+    ====================================================== -->
+
+    <section
+      class="projects"
+      id="projects"
+    >
+
+      <div class="container">
+
+
+        <div class="reveal">
+
+          <div class="section-label">
+            05 — Projects
+          </div>
+
+          <h2 class="section-title">
+
+            Strategic
+            <span>collaboration.</span>
+
+          </h2>
+
+        </div>
+
+
+        <div class="project-card reveal">
+
+
+          <!-- LARGE MERAKI × FOUR PILLARS IMAGE -->
+
+          <img
+            src="WhatsApp Image 2026-09-12 at 18.39.51.jpeg"
+            alt="Meraki and Four Pillars Collaboration"
+            class="meraki-logo"
+          />
+
+
+          <div class="project-details">
+
+
+            <div class="project-detail">
+
+              <small>
+                Collaboration
+              </small>
+
+              <p>
+                MERAKI × FOUR PILLARS
+              </p>
+
+            </div>
+
+
+            <div class="project-detail">
+
+              <small>
+                Focus
+              </small>
+
+              <p>
+
+                Cross-border business development,
+                market access and strategic opportunities.
+
+              </p>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- PROJECT WALKTHROUGH VIDEO -->
+
+          <div class="project-video-container">
+
+            <video
+              class="project-video"
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
             >
+
+              <source
+                src="https://res.cloudinary.com/lmgemsl4/video/upload/v1789364045/compressed-Meraki_Walkthrough.mp4"
+                type="video/mp4"
+              />
+
+              Your browser does not support video playback.
+
+            </video>
+
           </div>
 
-          <div class="collab-copy">
-            <div class="eyebrow">Strategic Collaboration</div>
-
-            <h2 class="section-title">
-              Building through<br>
-              <span class="gold">trusted partnerships.</span>
-            </h2>
-
-            <div class="collab-brand">
-              MERAKI × FOUR PILLARS
-            </div>
-
-            <p>
-              Strategic collaborations allow us to connect expertise,
-              relationships and market opportunities to create stronger
-              outcomes across geographies and sectors. The objective is
-              simple: combine complementary capabilities to create more
-              meaningful commercial pathways.
-            </p>
-
-            <a class="btn btn-primary" href="#contact">
-              Discuss a Partnership ↗
-            </a>
-          </div>
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- SECTORS -->
-    <section class="section light" id="sectors">
+
+    <!-- =====================================================
+         WHY FOUR PILLARS
+    ====================================================== -->
+
+    <section class="why">
+
       <div class="container">
 
-        <div class="split">
-          <div>
-            <div class="eyebrow">Where We Operate</div>
-            <h2 class="section-title">
-              Key sectors.<br>
-              <span class="gold">Global opportunities.</span>
-            </h2>
+
+        <div class="reveal">
+
+          <div class="section-label">
+            Why Four Pillars
           </div>
 
-          <div class="copy">
-            <p>
-              Our sector focus is intentionally broad enough to reveal
-              cross-industry opportunity, while remaining practical enough to
-              support focused market and partnership work.
-            </p>
-          </div>
-        </div>
 
-        <div class="sector-grid">
+          <h2 class="section-title">
 
-          <article class="sector">
-            <div class="sector-tag">01</div>
-            <div>
-              <h3>Education</h3>
-              <p>
-                Connecting education providers, institutions, investors and
-                strategic partners across international markets.
-              </p>
-              <em>
-                Institutional expansion · transnational partnerships · edtech
-                market entry
-              </em>
-            </div>
-          </article>
+            Four principles.<br />
 
-          <article class="sector">
-            <div class="sector-tag">02</div>
-            <div>
-              <h3>Real Estate</h3>
-              <p>
-                Supporting developers, investors, agencies and businesses with
-                market expansion, strategic partnerships and cross-border
-                opportunities.
-              </p>
-              <em>
-                Development · capital advisory · portfolio growth
-              </em>
-            </div>
-          </article>
+            One
+            <span>direction.</span>
 
-          <article class="sector">
-            <div class="sector-tag">03</div>
-            <div>
-              <h3>Hospitality</h3>
-              <p>
-                Helping hospitality brands and operators identify new markets,
-                strategic partners and opportunities for international growth.
-              </p>
-              <em>
-                Hotel development · F&amp;B scaling · operator opportunities
-              </em>
-            </div>
-          </article>
-
-          <article class="sector">
-            <div class="sector-tag">04</div>
-            <div>
-              <h3>Food &amp; Consumer Products</h3>
-              <p>
-                Supporting brands seeking distribution, market entry, strategic
-                partnerships and expansion across high-growth markets.
-              </p>
-              <em>
-                Distribution · market access · regional expansion
-              </em>
-            </div>
-          </article>
+          </h2>
 
         </div>
 
-      </div>
-    </section>
 
-    <!-- MARKETS -->
-    <section class="section dark" id="markets">
-      <div class="container">
+        <div class="why-grid reveal">
 
-        <div class="markets-layout">
 
-          <div class="market-intro">
-            <div class="eyebrow">Global Footprint</div>
-            <h2 class="section-title">
-              Dubai at the<br>
-              <span class="gold">centre of the network.</span>
-            </h2>
+          <div class="why-item">
+
+            <small>
+              01
+            </small>
+
+            <h3>
+              Strategy
+            </h3>
+
             <p>
-              Our market perspective connects the GCC with growth opportunities
-              across South Asia, Africa and Australia.
+              Understanding where you want to go and creating
+              the right roadmap.
             </p>
-            <div class="market-tags">
-              GCC · South Asia · Africa · Australia
-            </div>
-          </div>
-
-          <div class="market-grid">
-
-            <article class="market">
-              <small>01</small>
-              <h3>GCC</h3>
-              <p>
-                Dubai and the wider Gulf as a strategic platform for
-                international business.
-              </p>
-            </article>
-
-            <article class="market">
-              <small>02</small>
-              <h3>South Asia</h3>
-              <p>
-                Connecting businesses and capital with one of the world's most
-                dynamic growth regions.
-              </p>
-            </article>
-
-            <article class="market">
-              <small>03</small>
-              <h3>Africa</h3>
-              <p>
-                Exploring growth, partnerships and market-entry opportunities
-                across selected African markets.
-              </p>
-            </article>
-
-            <article class="market">
-              <small>04</small>
-              <h3>Australia</h3>
-              <p>
-                Building commercial bridges between Australian businesses and
-                international markets.
-              </p>
-            </article>
 
           </div>
+
+
+          <div class="why-item">
+
+            <small>
+              02
+            </small>
+
+            <h3>
+              Market Access
+            </h3>
+
+            <p>
+              Identifying the right markets and pathways
+              to enter them.
+            </p>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <small>
+              03
+            </small>
+
+            <h3>
+              Network
+            </h3>
+
+            <p>
+              Connecting you with the right people,
+              partners and decision-makers.
+            </p>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <small>
+              04
+            </small>
+
+            <h3>
+              Execution
+            </h3>
+
+            <p>
+              Turning strategy and opportunities into
+              tangible commercial outcomes.
+            </p>
+
+          </div>
+
 
         </div>
 
       </div>
+
     </section>
 
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
+
+    <!-- =====================================================
+         BUILDING BRIDGES
+    ====================================================== -->
+
+    <section class="bridges">
+
+      <div class="container bridges-container reveal">
+
+
+        <div class="section-label">
+          Building Bridges Across Borders
+        </div>
+
+
+        <h2 class="section-title">
+
+          Your ambition may be
+          <span>global.</span>
+
+        </h2>
+
+
+        <p class="bridges-copy">
+
+          At Four Pillars Business Services, we don't simply
+          advise businesses on where opportunities exist—we help
+          create the connections that can make those opportunities
+          possible.
+
+          Whether you are looking to expand into the GCC,
+          access South Asian markets, explore Africa, enter
+          Australia or build an international partnership,
+          we bring together the strategic thinking and
+          relationships required to take the next step.
+
+        </p>
+
+
+        <div class="bridge-line"></div>
+
+
+        <div class="bridge-tagline">
+          Our role is to help you get there.
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
       <div class="container">
 
-        <div class="contact-layout">
 
-          <div class="contact-text">
-            <div class="eyebrow">Start a Conversation</div>
+        <div class="contact-grid">
+
+
+          <div class="reveal">
+
+            <div class="section-label">
+              06 — Contact
+            </div>
+
 
             <h2 class="section-title">
-              Let's discuss<br>
-              <span class="gold">what comes next.</span>
+
+              Schedule a
+              <span>consultation.</span>
+
             </h2>
 
-            <p>
-              Tell us what you are looking to achieve, where you are looking
-              to grow and what kind of opportunity you want to explore.
-              We'll take it from there.
-            </p>
 
-            <div class="contact-meta">
+            <div class="contact-details">
 
-              <div class="meta">
-                <div class="meta-label">Email</div>
-                <a href="mailto:info@fourpillars.co">info@fourpillars.co</a>
+
+              <div class="contact-detail">
+
+                <small>
+                  Email
+                </small>
+
+                <a href="mailto:info@fourpillars.co">
+                  info@fourpillars.co
+                </a>
+
               </div>
 
-              <div class="meta">
-                <div class="meta-label">Phone</div>
-                <a href="tel:+918291503500">+91 82915 03500</a>
+
+              <div class="contact-detail">
+
+                <small>
+                  Phone
+                </small>
+
+                <a href="tel:+918291503500">
+                  +91 82915 03500
+                </a>
+
               </div>
 
-              <div class="meta">
-                <div class="meta-label">Headquarters</div>
-                <span>Dubai · UAE</span>
+
+              <div class="contact-detail">
+
+                <small>
+                  Location
+                </small>
+
+                <span>
+                  Dubai · UAE
+                </span>
+
               </div>
+
 
             </div>
+
           </div>
 
-          <div class="form-card">
 
-            <form
-              id="contactForm"
-              action="https://formsubmit.co/ajax/info@pillars.co"
-              method="POST"
-            >
+          <!-- CONTACT FORM -->
 
-              <input type="hidden" name="_subject" value="New Four Pillars Business Advisory Enquiry">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
+          <form
+            class="contact-form reveal"
+            id="contactForm"
+          >
 
-              <div class="field">
-                <label for="name">Full Name *</label>
-                <input id="name" name="name" type="text" required autocomplete="name">
-              </div>
+
+            <div class="form-row">
+
 
               <div class="field">
-                <label for="email">Work Email *</label>
-                <input id="email" name="email" type="email" required autocomplete="email">
+
+                <label>
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  name="name"
+                  required
+                />
+
               </div>
+
 
               <div class="field">
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" autocomplete="organization">
+
+                <label>
+                  Company
+                </label>
+
+                <input
+                  type="text"
+                  name="company"
+                />
+
               </div>
+
+
+            </div>
+
+
+            <div class="form-row">
+
 
               <div class="field">
-                <label for="message">What are you looking to achieve? *</label>
-                <textarea id="message" name="message" required></textarea>
+
+                <label>
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  name="email"
+                  required
+                />
+
               </div>
 
-              <p class="form-status" id="formStatus" aria-live="polite"></p>
 
-              <button class="submit" id="submitButton" type="submit">
-                Send Enquiry →
+              <div class="field">
+
+                <label>
+                  Phone
+                </label>
+
+                <input
+                  type="tel"
+                  name="phone"
+                />
+
+              </div>
+
+
+            </div>
+
+
+            <div class="form-row">
+
+
+              <div class="field">
+
+                <label>
+                  Country / Market
+                </label>
+
+                <input
+                  type="text"
+                  name="country"
+                />
+
+              </div>
+
+
+              <div class="field">
+
+                <label>
+                  Area of Interest
+                </label>
+
+                <select name="interest">
+
+                  <option value="">
+                    Select
+                  </option>
+
+                  <option>
+                    Strategic Consulting
+                  </option>
+
+                  <option>
+                    Cross-Border Market Entry
+                  </option>
+
+                  <option>
+                    Strategic Partnerships
+                  </option>
+
+                  <option>
+                    Business Expansion & Scaling
+                  </option>
+
+                  <option>
+                    Opportunity & Investment Advisory
+                  </option>
+
+                  <option>
+                    Network & Market Access
+                  </option>
+
+                  <option>
+                    Real Estate
+                  </option>
+
+                </select>
+
+              </div>
+
+
+            </div>
+
+
+            <div class="field">
+
+              <label>
+                Message
+              </label>
+
+              <textarea
+                name="message"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <div class="form-submit">
+
+              <button
+                type="submit"
+                class="button button-gold"
+              >
+                Request a Consultation
               </button>
 
-            </form>
+            </div>
 
-          </div>
+
+            <div
+              class="form-message"
+              id="formMessage"
+            ></div>
+
+
+          </form>
+
 
         </div>
 
       </div>
+
     </section>
 
   </main>
 
-  <!-- FOOTER -->
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
   <footer>
-    <div class="container">
 
-      <div class="footer-top">
+    <div class="footer-grid">
 
-        <a class="footer-brand" href="#top" aria-label="Four Pillars Business Advisory home">
-          <img src="fourpillars.jpeg" alt="Four Pillars Business Advisory">
-        </a>
+
+      <div class="footer-brand">
+
+        <img
+          src="fourpillars.jpeg"
+          alt="Four Pillars Business Services"
+          class="footer-logo"
+        />
+
+
+        <h3>
+
+          Connecting Markets.<br />
+          Creating Opportunities.<br />
+          Scaling Businesses.
+
+        </h3>
+
 
         <p>
-          Connecting markets, creating opportunities and helping businesses
-          build sustainable international growth.
+          Strategy. Networks. Opportunities. Growth.
         </p>
 
-        <a class="footer-email" href="mailto:info@fourpillars.co">
-          infofour@pillars.co
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          NAVIGATION
+        </h4>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#real-estate">
+          Real Estate
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#contact">
+          Consultation
         </a>
 
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2026 Four Pillars Business Advisory</span>
-        <span>Dubai · UAE · Global Reach</span>
+
+      <div class="footer-column">
+
+        <h4>
+          CONTACT
+        </h4>
+
+        <a href="mailto:info@fourpillars.co">
+          info@fourpillars.co
+        </a>
+
+        <a href="tel:+918291503500">
+          +91 82915 03500
+        </a>
+
+        <a href="#contact">
+          Dubai · UAE
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Four Pillars Business Services. All rights reserved.
+      </span>
+
+      <span>
+        Strategy. Networks. Opportunities. Growth.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =======================================================
+       WHATSAPP
+  ======================================================== -->
+
+  <a
+    href="https://wa.me/918291503500?text=Hello%20Four%20Pillars%2C%20I%20would%20like%20to%20discuss%20a%20business%20opportunity."
+    class="whatsapp-button"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contact Four Pillars on WhatsApp"
+  >
+
+    <svg viewBox="0 0 24 24">
+
+      <path d="M20.52 3.48A11.82 11.82 0 0 0 12.07 0C5.53 0 .2 5.33.2 11.87c0 2.09.55 4.13 1.59 5.93L.1 24l6.34-1.66a11.85 11.85 0 0 0 5.63 1.43h.01c6.54 0 11.87-5.33 11.87-11.87 0-3.17-1.23-6.14-3.43-8.42zM12.08 21.73h-.01a9.84 9.84 0 0 1-5.02-1.37l-.36-.21-3.76.98 1-3.66-.23-.38a9.82 9.82 0 1 1 8.38 4.64zm5.39-7.37c-.29-.15-1.71-.84-1.98-.94-.27-.1-.47-.15-.67.15-.2.29-.77.94-.95 1.13-.17.2-.35.22-.64.07-.29-.15-1.22-.45-2.32-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.48-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.71-.7 1.95-1.37.24-.67.24-1.24.17-1.37-.07-.12-.27-.2-.56-.34z"/>
+
+    </svg>
+
+  </a>
+
+
+  <!-- =======================================================
+       AI CHAT BUTTON
+  ======================================================== -->
+
+  <button
+    class="chat-toggle"
+    id="chatToggle"
+    aria-label="Open Four Pillars AI Assistant"
+  >
+    ✦
+  </button>
+
+
+  <!-- =======================================================
+       AI CHAT WINDOW
+  ======================================================== -->
+
+  <div
+    class="chat-window"
+    id="chatWindow"
+  >
+
+
+    <div class="chat-header">
+
+      <div>
+
+        <div class="chat-title">
+          Four Pillars AI
+        </div>
+
+        <span class="chat-subtitle">
+          BUSINESS ASSISTANT
+        </span>
+
+      </div>
+
+
+      <button
+        class="chat-close"
+        id="chatClose"
+        aria-label="Close chatbot"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="chat-messages"
+      id="chatMessages"
+    >
+
+      <div class="chat-message bot">
+
+        Hello. Welcome to Four Pillars Business Services.
+        I can help you learn about our services, sectors,
+        markets and consultation process.
+
       </div>
 
     </div>
-  </footer>
 
-  <!-- VIDEO CONTROLS -->
-  <div class="video-controls">
-    <button class="video-btn" id="playPause" type="button">Pause</button>
-    <button class="video-btn" id="soundToggle" type="button">Sound Off</button>
+
+    <div
+      class="typing-indicator"
+      id="typingIndicator"
+    >
+      Four Pillars AI is thinking...
+    </div>
+
+
+    <div class="quick-questions">
+
+      <button
+        data-question="What does Four Pillars Business Services do?"
+      >
+        What do you do?
+      </button>
+
+      <button
+        data-question="What services do you provide?"
+      >
+        Services
+      </button>
+
+      <button
+        data-question="Which markets do you cover?"
+      >
+        Markets
+      </button>
+
+      <button
+        data-question="Which sectors do you serve?"
+      >
+        Sectors
+      </button>
+
+      <button
+        data-question="How can I schedule a consultation?"
+      >
+        Consultation
+      </button>
+
+    </div>
+
+
+    <div class="chat-input-area">
+
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Ask Four Pillars AI..."
+        autocomplete="off"
+      />
+
+      <button id="chatSend">
+        SEND
+      </button>
+
+    </div>
+
   </div>
 
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
   <script>
-    /* Header */
-    const header = document.getElementById("header");
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
 
-    function updateHeader(){
-      header.classList.toggle("scrolled", window.scrollY > 30);
-    }
-    window.addEventListener("scroll", updateHeader, {passive:true});
-    updateHeader();
+    /* =====================================================
+       HEADER SCROLL
+    ===================================================== */
 
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-    });
+    const header =
+      document.getElementById("header");
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => mobileMenu.classList.remove("open"));
-    });
+    window.addEventListener("scroll", () => {
 
-    /* Video controls */
-    const video = document.getElementById("bgVideo");
-    const playPause = document.getElementById("playPause");
-    const soundToggle = document.getElementById("soundToggle");
+      if (window.scrollY > 40) {
 
-    function syncVideoControls(){
-      playPause.textContent = video.paused ? "Play" : "Pause";
-      soundToggle.textContent = video.muted ? "Sound Off" : "Sound On";
-    }
+        header.classList.add("scrolled");
 
-    playPause.addEventListener("click", async () => {
-      try{
-        if(video.paused) await video.play();
-        else video.pause();
-      }catch(err){
-        console.error(err);
-      }
-      syncVideoControls();
-    });
+      } else {
 
-    soundToggle.addEventListener("click", async () => {
-      try{
-        video.muted = !video.muted;
-        if(!video.muted){
-          video.volume = 1;
-          if(video.paused) await video.play();
-        }
-      }catch(err){
-        console.error(err);
-      }
-      syncVideoControls();
-    });
+        header.classList.remove("scrolled");
 
-    video.addEventListener("play", syncVideoControls);
-    video.addEventListener("pause", syncVideoControls);
-    video.addEventListener("volumechange", syncVideoControls);
-    syncVideoControls();
-
-    /* Contact form */
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
-    const submitButton = document.getElementById("submitButton");
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      if(!form.checkValidity()){
-        form.reportValidity();
-        return;
       }
 
-      const originalText = submitButton.textContent;
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-      status.textContent = "Sending your enquiry…";
+    });
 
-      try{
-        const response = await fetch(form.action, {
-          method:"POST",
-          body:new FormData(form),
-          headers:{Accept:"application/json"}
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const mobileMenu =
+      document.getElementById("mobileMenu");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    mobileMenu.addEventListener("click", () => {
+
+      navLinks.classList.toggle("open");
+
+      mobileMenu.textContent =
+        navLinks.classList.contains("open")
+          ? "×"
+          : "☰";
+
+    });
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+          navLinks.classList.remove("open");
+
+          mobileMenu.textContent = "☰";
+
         });
 
-        if(!response.ok) throw new Error("Form submission failed");
+      });
 
-        const result = await response.json();
 
-        if(result.success === true || result.success === "true"){
-          form.reset();
-          status.textContent = "Thank you. Your enquiry has been sent to info@pillars.co.";
-        }else{
-          throw new Error("Form service returned an error");
-        }
+    /* =====================================================
+       HERO VIDEO
+    ===================================================== */
 
-      }catch(error){
-        console.error(error);
+    const heroVideo =
+      document.getElementById("heroVideo");
 
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const company = document.getElementById("company").value.trim();
-        const message = document.getElementById("message").value.trim();
+    const soundButton =
+      document.getElementById("soundButton");
 
-        const subject = encodeURIComponent("New Four Pillars Business Advisory Enquiry");
-        const body = encodeURIComponent(
-`Name: ${name}
-Email: ${email}
-Company: ${company}
+    const playButton =
+      document.getElementById("playButton");
 
-Enquiry:
-${message}`
-        );
 
-        status.textContent = "Opening your email client…";
-        window.location.href = `mailto:info@pillars.co?subject=${subject}&body=${body}`;
+    soundButton.addEventListener("click", () => {
+
+      heroVideo.muted =
+        !heroVideo.muted;
+
+      soundButton.textContent =
+        heroVideo.muted
+          ? "Sound Off"
+          : "Sound On";
+
+    });
+
+
+    playButton.addEventListener("click", () => {
+
+      if (heroVideo.paused) {
+
+        heroVideo.play();
+
+        playButton.textContent =
+          "Pause";
+
+      } else {
+
+        heroVideo.pause();
+
+        playButton.textContent =
+          "Play";
+
       }
 
-      submitButton.disabled = false;
-      submitButton.textContent = originalText;
     });
 
-    /* Smooth anchors */
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", event => {
-        const id = link.getAttribute("href");
-        if(!id || id === "#") return;
 
-        const target = document.querySelector(id);
-        if(!target) return;
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.10
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    /* =====================================================
+       CONTACT FORM
+    ===================================================== */
+
+    const contactForm =
+      document.getElementById("contactForm");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+
+    contactForm.addEventListener(
+      "submit",
+      async event => {
 
         event.preventDefault();
-        target.scrollIntoView({behavior:"smooth", block:"start"});
+
+
+        const formData =
+          new FormData(contactForm);
+
+
+        const data =
+          Object.fromEntries(
+            formData.entries()
+          );
+
+
+        /*
+          First attempt to use backend.
+          If /api/contact does not exist,
+          fallback to email client.
+        */
+
+        try {
+
+          const response =
+            await fetch(
+              "/api/contact",
+              {
+                method: "POST",
+
+                headers: {
+                  "Content-Type":
+                    "application/json"
+                },
+
+                body:
+                  JSON.stringify(data)
+              }
+            );
+
+
+          if (response.ok) {
+
+            formMessage.style.display =
+              "block";
+
+            formMessage.textContent =
+              "Thank you. Your consultation request has been received.";
+
+            contactForm.reset();
+
+            return;
+
+          }
+
+        } catch (error) {
+
+          console.log(
+            "Contact backend unavailable."
+          );
+
+        }
+
+
+        /*
+          Email fallback
+        */
+
+        const subject =
+          encodeURIComponent(
+            "Four Pillars Consultation Request"
+          );
+
+
+        const body =
+          encodeURIComponent(
+`
+Name: ${data.name || ""}
+
+Company: ${data.company || ""}
+
+Email: ${data.email || ""}
+
+Phone: ${data.phone || ""}
+
+Country / Market: ${data.country || ""}
+
+Area of Interest: ${data.interest || ""}
+
+Message:
+
+${data.message || ""}
+`
+          );
+
+
+        window.location.href =
+          `mailto:info@fourpillars.co?subject=${subject}&body=${body}`;
+
+      }
+    );
+
+
+    /* =====================================================
+       AI CHATBOT
+    ===================================================== */
+
+    const chatToggle =
+      document.getElementById("chatToggle");
+
+    const chatWindow =
+      document.getElementById("chatWindow");
+
+    const chatClose =
+      document.getElementById("chatClose");
+
+    const chatMessages =
+      document.getElementById("chatMessages");
+
+    const chatInput =
+      document.getElementById("chatInput");
+
+    const chatSend =
+      document.getElementById("chatSend");
+
+    const typingIndicator =
+      document.getElementById("typingIndicator");
+
+
+    /*
+      Current browser-session conversation only.
+      Nothing is permanently stored here.
+    */
+
+    let conversation = [];
+
+
+    /* OPEN CHAT */
+
+    chatToggle.addEventListener(
+      "click",
+      () => {
+
+        chatWindow.classList.toggle(
+          "open"
+        );
+
+        if (
+          chatWindow.classList.contains("open")
+        ) {
+
+          setTimeout(() => {
+
+            chatInput.focus();
+
+          }, 100);
+
+        }
+
+      }
+    );
+
+
+    /* CLOSE CHAT */
+
+    chatClose.addEventListener(
+      "click",
+      () => {
+
+        chatWindow.classList.remove(
+          "open"
+        );
+
+      }
+    );
+
+
+    /* ADD MESSAGE */
+
+    function addChatMessage(
+      text,
+      type
+    ) {
+
+      const message =
+        document.createElement("div");
+
+      message.className =
+        `chat-message ${type}`;
+
+      message.textContent =
+        text;
+
+      chatMessages.appendChild(
+        message
+      );
+
+      chatMessages.scrollTop =
+        chatMessages.scrollHeight;
+
+    }
+
+
+    /* SEND MESSAGE */
+
+    async function sendChatMessage() {
+
+      const question =
+        chatInput.value.trim();
+
+
+      if (!question) {
+
+        return;
+
+      }
+
+
+      /* USER MESSAGE */
+
+      addChatMessage(
+        question,
+        "user"
+      );
+
+
+      conversation.push({
+        role: "user",
+        content: question
       });
-    });
+
+
+      chatInput.value = "";
+
+      typingIndicator.classList.add(
+        "show"
+      );
+
+
+      try {
+
+
+        /*
+          IMPORTANT:
+
+          This frontend NEVER contains
+          the OpenRouter API key.
+
+          It calls your own backend:
+
+          /api/chat
+
+          The backend should call OpenRouter.
+        */
+
+
+        const response =
+          await fetch(
+            "/api/chat",
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json"
+              },
+
+              body:
+                JSON.stringify({
+
+                  question:
+                    question,
+
+                  conversation:
+                    conversation
+
+                })
+
+              }
+            );
+
+
+        const data =
+          await response.json();
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.error ||
+            "AI service unavailable"
+          );
+
+        }
+
+
+        const answer =
+          data.answer ||
+          "I don't have that information available. Please contact info@fourpillars.co.";
+
+
+        conversation.push({
+          role: "assistant",
+          content: answer
+        });
+
+
+        typingIndicator.classList.remove(
+          "show"
+        );
+
+
+        addChatMessage(
+          answer,
+          "bot"
+        );
+
+
+      } catch (error) {
+
+        console.error(
+          "Chat error:",
+          error
+        );
+
+
+        typingIndicator.classList.remove(
+          "show"
+        );
+
+
+        addChatMessage(
+          "I'm currently unable to connect to the AI assistant. Please contact info@fourpillars.co for assistance.",
+          "bot"
+        );
+
+      }
+
+    }
+
+
+    /* SEND BUTTON */
+
+    chatSend.addEventListener(
+      "click",
+      sendChatMessage
+    );
+
+
+    /* ENTER KEY */
+
+    chatInput.addEventListener(
+      "keydown",
+      event => {
+
+        if (event.key === "Enter") {
+
+          event.preventDefault();
+
+          sendChatMessage();
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       QUICK QUESTIONS
+    ===================================================== */
+
+    document
+      .querySelectorAll(
+        ".quick-questions button"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const question =
+              button.dataset.question;
+
+            chatInput.value =
+              question;
+
+            sendChatMessage();
+
+          }
+        );
+
+      });
+
+
   </script>
 
 </body>
