@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   wrapper.innerHTML = `
     <a
-      href="https://wa.me/918828586487?text=Hello%20Four%20Pillars%2C%20I%20would%20like%20to%20discuss%20a%20business%20opportunity."
+      const whatsappUrl =
+  "https://wa.me/918828586487?text=Hello%20Four%20Pillars%2C%20I%20would%20like%20to%20discuss%20a%20business%20opportunity."
       target="_blank"
       rel="noopener noreferrer"
       class="chat-whatsapp-button"
